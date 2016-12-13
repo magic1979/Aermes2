@@ -1644,6 +1644,7 @@ function onDeviceReady() {
 				   
 				   }
 				   
+				   $("#sottomappa").html("Punto di partenza del pacco");
 
 				   $("#destinazione").hide();
 				   $("#tbldestinazione").hide();
@@ -2257,6 +2258,8 @@ function onDeviceReady() {
 		$("#Orario").html("<option selected>--</option><option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>");
 		$("#Minuti").html("<option selected>--</option><option>00</option><option>15</option><option>30</option><option>45</option>");
 				   
+		$("#sottomappa").html("Punto di partenza del pacco");
+				   
 		$("#Orario").selectmenu("refresh");
 		$("#Minuti").selectmenu("refresh");
 	
@@ -2311,6 +2314,8 @@ function onDeviceReady() {
 				   
 				   $("#Orario").html("<option selected>--</option><option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>");
 				   $("#Minuti").html("<option selected>--</option><option>00</option><option>15</option><option>30</option><option>45</option>");
+				   
+				   $("#sottomappa").html("Punto di destinazione del pacco");
 				   
 				   $("#Orario").selectmenu("refresh");
 				   $("#Minuti").selectmenu("refresh");
@@ -2391,6 +2396,7 @@ function onDeviceReady() {
 				   
 				   }
 				   
+				   $("#sottomappa").html("Punto di destinazione del pacco");
 				   
 				   $("#s_partenza2").hide();
 				   $("#s_arrivo").show();
