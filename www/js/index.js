@@ -9116,6 +9116,8 @@ function richiesta1() {
 				   
 					  
 					  $(document).on("touchstart", "#cell1", function(e){
+						  
+						localStorage.setItem("dovesono", "2")
 								  
 						window.location.href = "tel:+39" + cell1 + "";
 									 
@@ -9195,6 +9197,8 @@ function richiesta1() {
 				   $(document).on("touchstart tap", "#gps1", function(e){
 						
 						var addressLongLat = lat1+","+lng1;
+						
+						localStorage.setItem("dovesono", "2")
 	
 						//window.open("maps:daddr="+ addressLongLat +"" , '_system');
 						window.open("google.navigation:q="+ addressLongLat +"&mode=d" , '_system');
@@ -10059,6 +10063,8 @@ function richiesta2() {
 						  
 						  
 						  $(document).on("tap", "#cell2", function(e){
+							  
+							  			localStorage.setItem("dovesono", "2")
 										 
 										 window.location.href = "tel:+39"+cell2+"";
 										 
@@ -10145,6 +10151,8 @@ function richiesta2() {
 					  $(document).on("touchstart tap", "#gps22", function(e){
 
 								 var addressLongLat = lat2+","+lng2;
+								 
+								 localStorage.setItem("dovesono", "2")
 
 	                            //window.open("maps:daddr="+ addressLongLat +"" , '_system');
 								window.open("google.navigation:q="+ addressLongLat +"&mode=d" , '_system');
@@ -11184,6 +11192,8 @@ function richiesta3() {
 						  
 						  
 						  $(document).on("touchstart", "#cell3", function(e){
+							  
+							  			localStorage.setItem("dovesono", "2")
 										 
 										 window.location.href = "tel:+39"+cell3+"";
 										 
@@ -11223,7 +11233,9 @@ function richiesta3() {
 				  
 				  $(document).on("tap", "#gps3", function(e){
 
-						var addressLongLat = lat3+","+lng3;
+								var addressLongLat = lat3+","+lng3;
+						
+								localStorage.setItem("dovesono", "2")
 	
 	                             //window.open("maps:daddr="+ addressLongLat +"" , '_system');
 								 window.open("google.navigation:q="+ addressLongLat +"&mode=d" , '_system');
@@ -12387,6 +12399,8 @@ function inviachat(id) {
 				  
 				    //$("#btnpanel").click();
 					//controllachat2()
+					
+					chatting66(1,localStorage.getItem("id_richiesta"))
 					
 				  }
 				  
