@@ -5368,7 +5368,7 @@ function resetta1(focus) {
 		tempo = 0;
 		
 		localStorage.setItem("nobanner","0")
-		prendibanner();
+		//prendibanner();
 		
 		timer()
 
@@ -5639,7 +5639,7 @@ function timer(){
 									
 									
 									if(localStorage.getItem("nobanner")=="0"){
-									  prendibanner()
+									  //prendibanner()
 									}
 									
 									
