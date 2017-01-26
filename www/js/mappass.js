@@ -1136,7 +1136,7 @@ function onDeviceReady() {
 	document.addEventListener('backbutton', function(e) {
 							  
 	        navigator.notification.confirm(
-			'Vuoi chiudere Aermes?',  // message
+			'vuoi mettere in background aermes?',  // message
 			 onConfirm2,              // callback to invoke with index of button pressed
 			'Spegni',            // title
 			'Spegni,Annulla'      // buttonLabels

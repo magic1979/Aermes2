@@ -850,6 +850,12 @@ function onDeviceReady() {
 			if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 				   
 	});
+	
+	$(document).on("tap", "#polici", function(e){
+				   
+		var ref = window.open('http://www.aermes.eu/termini-e-condizioni/', '_system', 'location=no');
+				   
+	});
 
 	
 	$(document).on("touchend", "#accedi", function(e){
@@ -3225,7 +3231,7 @@ function LoginVera(email,pin){
 				  localStorage.setItem("perc_pass", item.perc_pass);
 				  localStorage.setItem("id_utente", item.id_utente);
 				  
-				  localStorage.setItem("fotoprof", item.foto);
+				  localStorage.setItem("fotoprof", item.foto.replace(".jpg","").replace(".png",""));
 				  //.replace(".jpg","").replace(".png","")
 				  
 				  localStorage.setItem("patente", item.patente)
@@ -3483,6 +3489,8 @@ function iscriviti(){
 	//alert("http://msop.it/aermes/check_registrazione.php?email="+ emailreg +"&password="+ pinreg +"&nickname="+ emailreg +"&cell="+ cell +"&patente=&patentemese=&patenteanno=&nome=&cognome=&anno_nascita=1980")
 	
 	
+	if (document.getElementById('accettap').checked) {
+	
 	$("#spinner2").show();
 	$.ajax({
 		   type:"GET",
@@ -3535,6 +3543,15 @@ function iscriviti(){
 		   
 		   },
 		   dataType:"jsonp"});
+	}
+	else{
+		navigator.notification.alert(
+										'Devi accettare i Termini e le condizioni per registrti',  // message
+										alertDismissed,         // callback
+										'Attenzione',            // title
+										'Done'                  // buttonName
+										);
+	}
 }
 
 

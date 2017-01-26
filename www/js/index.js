@@ -36,7 +36,7 @@ onDeviceReady: function() {
 	// Update DOM on a Received Event
 receivedEvent: function(id) {
     document.addEventListener("resume", onResume, false);
-	document.addEventListener("pause", onPause, false);
+	//document.addEventListener("pause", onPause, false);
 	
 	
 	if (localStorage.getItem("email") === null || localStorage.getItem("email")=="null" || typeof(localStorage.getItem("email")) == 'undefined' || localStorage.getItem("email")==0 || localStorage.getItem("email")=="") {
@@ -233,7 +233,7 @@ receivedEvent: function(id) {
 	  //if(localStorage.getItem("pagina")=="1"){
 	
 			navigator.notification.confirm(
-			 'vuoi chiudere Aermes?',  // message
+			 'vuoi mettere in background aermes?',  // message
 			 onConfirm2,              // callback to invoke with index of button pressed
 			'Spegni',            // title
 			'Spegni,Annulla'      // buttonLabels
@@ -305,9 +305,9 @@ receivedEvent: function(id) {
 		$('#noconn').hide();
 		//controllachat(1)
 		
-		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+"");
-		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+"");
-		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+"");
+		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
+		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
+		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
 		
 		//alert("http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg")
 		
@@ -551,13 +551,16 @@ receivedEvent: function(id) {
 	
 	function uploadPhoto(imageURI) {
 		var largeImage = document.getElementById('imguser');
+		var largeImage2 = document.getElementById('imgutente');
 		// Unhide image elements
 		//
 		largeImage.style.display = 'block';
+		largeImage2.style.display = 'block';
 		// Show the captured photo
 		// The inline CSS rules are used to resize the image
 		//
 		largeImage.src = imageURI;
+		largeImage2.src = imageURI;
 		
 		
 		var options = new FileUploadOptions();
@@ -4532,13 +4535,16 @@ function onResume() {
 	}*/
 	
 	
-	if(localStorage.getItem("dovesono")=="1"){
+	if(localStorage.getItem("dovesono")=="0"){
 	
 	  setTimeout(function() {
 	   window.location.href = "index.html";
 	  }, 700);
 	
     }
+	else{
+		$("#mappa6").tap();
+	}
 	
 	
 	/*var connectionStatus = false;
