@@ -305,9 +305,9 @@ receivedEvent: function(id) {
 		$('#noconn').hide();
 		//controllachat(1)
 		
-		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
-		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
-		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg");
+		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 		
 		//alert("http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg")
 		
@@ -568,8 +568,10 @@ receivedEvent: function(id) {
 		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
 		options.mimeType="image/jpeg";
 		
+		var nomecaricato = "ae_"+localStorage.getItem("email").replace("@","").replace(".","").replace(".","");
+		
 		var params = {};
-		params.value1 = localStorage.getItem("nomefoto");
+		params.value1 = nomecaricato;
 		params.value2 = "param";
 		
 		options.params = params;
@@ -588,12 +590,11 @@ receivedEvent: function(id) {
 		
 		//alert(r.response);
 		
-		localStorage.setItem("fotoprof", localStorage.getItem("nomefoto"));
+		localStorage.setItem("nomefoto", "ae_"+localStorage.getItem("email").replace("@","").replace(".","").replace(".",""));
 		
 		/*$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");*/
-		
 		
 	}
 	
@@ -819,9 +820,9 @@ receivedEvent: function(id) {
 				   
 				   $.mobile.changePage( "#home", { transition: "slide", changeHash: false, reverse: true });
 				   
-				   $("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+				   /*$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 				   $("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
-				   $("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+				   $("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");*/
 
 				   
 				   //window.location.href = "index.html";
