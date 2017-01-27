@@ -229,6 +229,12 @@ receivedEvent: function(id) {
 		window.location.href = "index.html";
 	  
 	  }*/
+	  
+	  for(i=0; i<10000; i++)
+	  {
+		window.clearInterval(i);
+	  }
+		
 							  
 	  //if(localStorage.getItem("pagina")=="1"){
 	
@@ -628,6 +634,8 @@ receivedEvent: function(id) {
 				   
 				   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 				   
+				   localStorage.setItem("dovesono","3")
+				   
 				   
 				   $("#spinner6").show();
 				   $.ajax({
@@ -829,6 +837,8 @@ receivedEvent: function(id) {
 				   
 				   //vediofferte44();
 				   //$("#spinner44").show();
+				   
+				   localStorage.setItem("dovesono","0")
 				   
 				   e.stopImmediatePropagation();
 				   
@@ -4543,10 +4553,12 @@ function onResume() {
 	  }, 700);
 	
     }
+	else if(localStorage.getItem("dovesono")=="3"){
+		
+	}
 	else{
 		$("#mappa6").tap();
 	}
-	
 	
 	/*var connectionStatus = false;
 	connectionStatus = navigator.onLine ? 'online' : 'offline';

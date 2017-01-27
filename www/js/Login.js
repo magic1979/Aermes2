@@ -403,7 +403,12 @@ function onDeviceReady() {
 	
     // CHIUSURA ANDROID ///////
     document.addEventListener('backbutton', function(e) {
-                              
+		
+			for(i=0; i<10000; i++)
+			{
+				window.clearInterval(i);
+			}
+			
 			if(localStorage.getItem("pagina")=="log"){
 								  
 				navigator.notification.confirm(
