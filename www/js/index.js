@@ -4557,7 +4557,8 @@ function onResume() {
 		
 	}
 	else{
-		$("#mappa6").tap();
+		//$("#mappa6").tap();
+		resetta1(1);
 	}
 	
 	/*var connectionStatus = false;
