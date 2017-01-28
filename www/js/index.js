@@ -1133,6 +1133,7 @@ receivedEvent: function(id) {
 	var foto1
 	var cod_sicurezza1
 	var grandezza1
+	var pagata1
 
 	
 	var nick2;
@@ -1166,6 +1167,7 @@ receivedEvent: function(id) {
 	var foto2
 	var cod_sicurezza2
 	var grandezza2
+	var pagata2
 	
 	var nick3;
 	var quando3;
@@ -1198,6 +1200,7 @@ receivedEvent: function(id) {
 	var foto3
 	var cod_sicurezza3
 	var grandezza3
+	var pagata3
 	
 	var muoviti;
 	var setGPS;
@@ -5028,6 +5031,7 @@ function resetta1(focus) {
 				  arrivo1 = item.arrivo
 				  distanza1 = item.distanza1
 				  stato1 = item.stato
+				  pagata1 = item.pagata
 				  lng1 = item.lng
 				  lat1 = item.lat
 				  
@@ -5130,6 +5134,7 @@ function resetta1(focus) {
 				  arrivo2 = item.arrivo
 				  distanza2 = item.distanza1
 				  stato2 = item.stato
+				  pagata2 = item.pagata
 				  lng2 = item.lng
 				  lat2 = item.lat
 				  
@@ -5228,6 +5233,7 @@ function resetta1(focus) {
 				  arrivo3 = item.arrivo
 				  distanza3 = item.distanza1
 				  stato3 = item.stato
+				  pagata3 = item.pagata
 				  lng3 = item.lng
 				  lat3 = item.lat
 				  
@@ -5325,9 +5331,9 @@ function resetta1(focus) {
 					// Google maps loaded
 		   } else {
 					
-		   setTimeout(function() {
-					  resetta1(1);
-					  }, 500);
+		     setTimeout(function() {
+				resetta1(1);
+			 }, 500);
 		   }
 		   
 		   },
@@ -5797,6 +5803,7 @@ function timer(){
 												  arrivo1 = item.arrivo
 												  distanza1 = item.distanza1
 												  stato1 = item.stato
+												  pagata1 = item.pagata
 												  lng1 = item.lng
 												  lat1 = item.lat
 												  cod1 = item.cod_autista
@@ -5862,6 +5869,7 @@ function timer(){
 												  localStorage.setItem("partenza1", partenza1)
 												  localStorage.setItem("arrivo1", arrivo1)
 												  localStorage.setItem("stato1", stato1)
+												  localStorage.setItem("pagata1", pagata1)
 												  localStorage.setItem("passeggeri1", passeggeri1)
 												  localStorage.setItem("animali1", animali1)
 												  localStorage.setItem("fumatori1", fumatori1)
@@ -6104,6 +6112,7 @@ function timer(){
 												  arrivo2 = item.arrivo
 												  distanza2 = item.distanza1
 												  stato2 = item.stato
+												  pagata2 = item.pagata
 												  lng2 = item.lng
 												  lat2 = item.lat
 												  cod2 = item.cod_autista
@@ -6136,6 +6145,7 @@ function timer(){
 													  localStorage.getItem("partenza2")==partenza2 &&
 													  localStorage.getItem("arrivo2")==arrivo2 &&
 													  localStorage.getItem("stato2")==stato2 &&
+													  localStorage.getItem("pagata2")==pagata2 &&
 													  localStorage.getItem("passeggeri2")==passeggeri2 &&
 													  localStorage.getItem("animali2")==animali2 &&
 													  localStorage.getItem("fumatori2")==fumatori2 &&
@@ -6164,6 +6174,7 @@ function timer(){
 												  localStorage.setItem("partenza2", partenza2)
 												  localStorage.setItem("arrivo2", arrivo2)
 												  localStorage.setItem("stato2", stato2)
+												  localStorage.setItem("pagata2", pagata2)
 												  localStorage.setItem("passeggeri2", passeggeri2)
 												  localStorage.setItem("animali2", animali2)
 												  localStorage.setItem("fumatori2", fumatori2)
@@ -6394,6 +6405,7 @@ function timer(){
 												  arrivo3 = item.arrivo
 												  distanza3 = item.distanza1
 												  stato3 = item.stato
+												  pagata3 = item.pagata
 												  lng3 = item.lng
 												  lat3 = item.lat
 												  cod3 = item.cod_autista
@@ -6439,6 +6451,7 @@ function timer(){
 												  localStorage.setItem("partenza3", partenza3)
 												  localStorage.setItem("arrivo3", arrivo3)
 												  localStorage.setItem("stato3", stato3)
+												  localStorage.setItem("pagata3", pagata3)
 												  localStorage.setItem("passeggeri3", passeggeri3)
 												  localStorage.setItem("animali3", animali3)
 												  localStorage.setItem("fumatori3", fumatori3)
@@ -9108,6 +9121,16 @@ function richiesta1() {
 					 });
 					  
 				   /////////////////////////////////////
+				   
+				   if(pagata1=="Si"){
+						$("#compracarta").hide();
+						$("#mostracarta").hide();
+					}
+					else{
+						$("#compracarta").show();
+						$("#mostracarta").show();
+					}
+
 					  
 				   $("#gps1").show();
 					  
@@ -10071,6 +10094,16 @@ function richiesta2() {
 									 });
 					  
 				   ////////////////////////////////////
+				   
+				   if(pagata2=="Si"){
+						$("#compracarta").hide();
+						$("#mostracarta").hide();
+					}
+					else{
+						$("#compracarta").show();
+						$("#mostracarta").show();
+					}
+
 					  
 				   $("#gps22").show();
 				   $("#risp2").hide();
@@ -11152,6 +11185,16 @@ function richiesta3() {
 								   });
 					
 					////////////////////////////////////
+					
+					if(pagata3=="Si"){
+						$("#compracarta").hide();
+						$("#mostracarta").hide();
+					}
+					else{
+						$("#compracarta").show();
+						$("#mostracarta").show();
+					}
+
 					
 					
 				  $("#gps3").show();
