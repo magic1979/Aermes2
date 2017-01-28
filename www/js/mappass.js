@@ -4797,7 +4797,7 @@ function vediofferte(){
 						seleziona();
 				    }
 				    else{
-				      $("#offerte4").append("<br><br><br><br><table width='90%' border='0' valign='center' align='center' class='tabellaB'><tr><td align='center' width='100%' colspan='2'><div align='center' class='custom-pass2'><a id='linkpass"+ item.id_richiesta +"_"+ item.id_autista +"'><font color='#fff'><b>"+ item.nick +"</b></font></div></td></tr><tr><td align='center' width='100%'><div id='stelleautista"+ item.id_richiesta +"_"+ item.id_autista +"'></div></td></tr><tr><td align='left' colspan='2'><table><tr><td><font size='2' color='#fff'><b><p>"+localStorage.getItem("sessionQuando")+": </p></font></td><td> </b><font color='#fff'>"+ item.quando +" </font></td><td><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionOra")+": </font></p></td><td> </b><font color='#fff' size='2'>"+ item.ora +"</font></td></tr></table><table><tr><td valign='top'><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionPartenza")+": </font></p></b></td><td> <font color='#fff' size='2'>"+ item.partenza +"</font></td></tr></table><table><tr><td valign='top'><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionArrivo")+": </font></p> </b></td><td><font color='#fff' size='2'>"+ item.arrivo +"</font></td></tr><tr><td valign='top'><font color='#fff' size='2'><b><p>Grandezza: </p> </b></font></td><td align='left'><font size='2' color='#fff' size='2'>"+ item.grandezza +"</td></tr><tr><td colspan='2'></td></tr><tr><td valign='top' align='center' colspan='2'><font size='3' color='#fff'><b><p>Codice di sicurezza </p> </b></font></td></tr><tr><td align='center' colspan='3'><font color='#fff'>"+ item.cod_sicurezza +"</font></td></tr><tr><td valign='top' colspan='2'><table class='costoservizio' width='100%'><tr><td width='60%' align='center'><font size='3' color='#fff'><b>Costo Servizio</b></font></td><td width='40%' align='center' ><font size='5' color='#fff'><b><div id='costocalcolato'>"+item.costo_servizio+"</div></b></font></td></tr></table></td></tr></table></td></tr><tr><td align='center'></td></tr><tr><td align='center'></td></tr><tr><td align='center' colspan='2'><a id='chat"+ item.id_richiesta +"_"+ item.id_autista +"' href='#' ><img src='img/chat.png' width='50'></a>&nbsp;&nbsp;<a id='rifiuta2"+ item.id_richiesta +"_"+ item.id_autista +"' href='#'><img src='img/ico_feedback.png' width='50'></a></td></tr><tr><td align='center'></td></tr></table>");
+				      $("#offerte4").append("<br><br><br><br><table width='90%' border='0' valign='center' align='center' class='tabellaB'><tr><td align='center' width='100%' colspan='2'><div align='center' class='custom-pass2'><a id='linkpass"+ item.id_richiesta +"_"+ item.id_autista +"'><font color='#fff'><b>"+ item.nick +"</b></font></div></td></tr><tr><td align='center' width='100%'><div id='stelleautista"+ item.id_richiesta +"_"+ item.id_autista +"'></div></td></tr><tr><td align='left' colspan='2'><table><tr><td><font size='2' color='#fff'><b><p>"+localStorage.getItem("sessionQuando")+": </p></font></td><td> </b><font color='#fff'>"+ item.quando +" </font></td><td><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionOra")+": </font></p></td><td> </b><font color='#fff' size='2'>"+ item.ora +"</font></td></tr></table><table><tr><td valign='top'><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionPartenza")+": </font></p></b></td><td> <font color='#fff' size='2'>"+ item.partenza +"</font></td></tr></table><table><tr><td valign='top'><b><p><font color='#fff' size='2'>"+localStorage.getItem("sessionArrivo")+": </font></p> </b></td><td><font color='#fff' size='2'>"+ item.arrivo +"</font></td></tr><tr><td valign='top'><font color='#fff' size='2'><b><p>Grandezza: </p> </b></font></td><td align='left'><font size='2' color='#fff' size='2'>"+ item.grandezza +"</td></tr><tr><td colspan='2'></td></tr><tr><td valign='top' align='center' colspan='2'><font size='3' color='#fff'><b><p>Codice di sicurezza </p> </b></font></td></tr><tr><td align='center' colspan='3'><font color='#fff'>"+ item.cod_sicurezza +"</font></td></tr><tr><td valign='top' colspan='2'><table class='costoservizio' width='100%'><tr><td width='60%' align='center'><font size='3' color='#fff'><b>Costo Servizio</b></font></td><td width='40%' align='center' ><font size='5' color='#fff'><b><div id='costocalcolato'>"+item.costo_servizio+"</div></b></font></td></tr></table></td></tr></table></td></tr><tr><td align='center'></td></tr><tr><td align='center'></td></tr><tr><td align='center' colspan='2'><a id='chat"+ item.id_richiesta +"_"+ item.id_autista +"' href='#' ><img src='img/chat.png' width='50'></a>&nbsp;&nbsp;<a id='rifiuta2"+ item.id_richiesta +"_"+ item.id_autista +"' href='#'><img id='star1"+ item.id_richiesta +"_"+ item.id_autista + "' src='img/starunselected.png' width='45'> <img id='star2"+ item.id_richiesta +"_"+ item.id_autista + "' src='img/starunselected.png' width='45'> <img id='star3"+ item.id_richiesta +"_"+ item.id_autista + "' src='img/starunselected.png' width='45'> <img id='star4"+ item.id_richiesta +"_"+ item.id_autista + "' src='img/starunselected.png' width='45'> <img id='star5"+ item.id_richiesta +"_"+ item.id_autista + "' src='img/starunselected.png' width='45'></a></td></tr><tr><td align='center'></td></tr></table>");
                    
 						  seleziona();
 					}
@@ -5565,7 +5565,7 @@ function scriviRec_passaggio(score,id_richiesta,id_autista){
 		   success:function(result){
 		   
 		   $.each(result, function(i,item){
-				  elimina(id_richiesta,id_autista)
+				  elimina_pass(id_richiesta,id_autista)
 				  
 				  
 				  navigator.notification.alert(
@@ -6307,6 +6307,84 @@ function elimina2(id_richiesta,id_autista){
            },
            dataType:"jsonp"});
 }
+							
+
+
+	function elimina_pass(id_richiesta,id_autista){
+								  
+		  $("#spinner4").show();
+		  $.ajax({
+				 type:"GET",
+				 url:"http://msop.it/aermes/elimina_pass.php?id_richiesta="+ id_richiesta +"&id_autista="+ id_autista +"",
+				 contentType: "application/json",
+				 //data: {ID: "Lazio"}, LIMIT 10
+				 timeout: 7000,
+				 jsonp: 'callback',
+				 crossDomain: true,
+				 success:function(result){
+				 
+				 $.each(result, function(i,item){
+						
+					if(item.Token==1){
+						
+						$("#spinner4").hide();
+						vediofferte()
+						
+					}
+						
+				});
+				 
+				 },
+				 error: function(){
+				 
+				 if(localStorage.getItem("lingua")=="it"){
+				 
+				 var alertattenzione = localStorage.getItem("sessionAttenzione")
+				 var alerterrore = localStorage.getItem("sessionErrorrete")
+				 var messaggioA = localStorage.getItem("sessionInsmessaggio")
+				 
+				 }
+				 else if(localStorage.getItem("lingua")=="en"){
+				 
+				 var alertattenzione = localStorage.getItem("sessionAttenzione")
+				 var alerterrore = localStorage.getItem("sessionErrorrete")
+				 var messaggioA = localStorage.getItem("sessionInsmessaggio")
+				 
+				 }
+				 else if(localStorage.getItem("lingua")=="fr"){
+				 
+				 var alertattenzione = localStorage.getItem("sessionAttenzione")
+				 var alerterrore = localStorage.getItem("sessionErrorrete")
+				 var messaggioA = localStorage.getItem("sessionInsmessaggio")
+				 
+				 }
+				 else if(localStorage.getItem("lingua")=="es"){
+				 
+				 var alertattenzione = localStorage.getItem("sessionAttenzione")
+				 var alerterrore = localStorage.getItem("sessionErrorrete")
+				 var messaggioA = localStorage.getItem("sessionInsmessaggio")
+				 
+				 }
+				 else{
+				 
+				 var alertattenzione = localStorage.getItem("sessionAttenzione")
+				 var alerterrore = localStorage.getItem("sessionErrorrete")
+				 var messaggioA = localStorage.getItem("sessionInsmessaggio")
+				 }
+				 
+				 navigator.notification.alert(
+											  alerterrore,  // message
+											  alertDismissed,         // callback
+											  alertattenzione,           // title
+											  'Done'                  // buttonName
+											  );
+				 
+				 
+				 vediofferte()
+				 
+				 },
+				 dataType:"jsonp"});
+	}
 									
 			
 	function elimina3(id_richiesta,id_autista){
