@@ -4605,6 +4605,30 @@ function deg2rad(deg) {
 
 
 function resetta1(focus) {
+	
+	var connectionStatus = false;
+	connectionStatus = navigator.onLine ? 'online' : 'offline';
+	
+	if(connectionStatus=='online'){
+		
+	}
+	else{
+		for(i=0; i<10000; i++)
+		{
+		  window.clearInterval(i);
+		 }
+												 
+		   window.location.href = "index.html"
+		
+		   e.stopImmediatePropagation();
+				   
+		   e.preventDefault();
+		   
+		   return false;
+		   
+		   if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
+	}
+	
 	muoviti = 1;
 	localStorage.setItem("pagemodifica","0")
 	localStorage.setItem("ritornaweb","0")
@@ -5327,14 +5351,35 @@ function resetta1(focus) {
 		   },
 		   error: function(){
 		   
-		   if (typeof google === 'object' && typeof google.maps === 'object') {
-					// Google maps loaded
-		   } else {
+		   		if(connectionStatus=='online'){
 					
-		     setTimeout(function() {
-				resetta1(1);
-			 }, 500);
-		   }
+					
+					if (typeof google === 'object' && typeof google.maps === 'object') {
+				   		for(i=0; i<10000; i++)
+						{
+						  window.clearInterval(i);
+						 }
+						  setTimeout(function() {
+							 resetta1(1);
+						  }, 2000);
+					} else {
+						for(i=0; i<10000; i++)
+						{
+						  window.clearInterval(i);
+						 }
+						 
+						 window.location.href = "index.html"
+						 //$("#mappa6").tap();
+						 //localStorage.setItem("inlinea", "0")
+					}
+				
+				}
+				else{
+					window.location.href = "index.html"
+					
+					//$("#mappa6").tap();
+					//localStorage.setItem("inlinea", "0")
+				}
 		   
 		   },
 		   dataType:"jsonp"});
@@ -6670,64 +6715,43 @@ function timer(){
 										   },
 										   error: function(){
 										   
-										   // Failed to load the Google Maps
-										   if (typeof google === 'object' && typeof google.maps === 'object') {
-										   for(i=0; i<10000; i++)
-										   {
-										   window.clearInterval(i);
-										   }
-										   
-										   setTimeout(function() {
-													  resetta1(1);
-													  }, 3000);
-										   } else {
-										   for(i=0; i<10000; i++)
-										   {
-										   window.clearInterval(i);
-										   }
-										   
-										   setTimeout(function() {
-													  resetta1(1);
-													  }, 5000);
-										   }
+											   		var connectionStatus = false;
+													connectionStatus = navigator.onLine ? 'online' : 'offline';
+													
+													if(connectionStatus=='online'){
+														
+														if (typeof google === 'object' && typeof google.maps === 'object') {
+															for(i=0; i<10000; i++)
+															{
+															  window.clearInterval(i);
+															 }
+															  setTimeout(function() {
+																 resetta1(1);
+															  }, 2000);
+														} else {
+															for(i=0; i<10000; i++)
+															{
+															  window.clearInterval(i);
+															 }
+															 
+															 window.location.href = "index.html"
+															
+														}
+													
+													}
+													else{
+														for(i=0; i<10000; i++)
+															{
+															  window.clearInterval(i);
+															 }
+															 
+														window.location.href = "index.html"
+															 
+													}
 										   
 										   
 										   },
 										   dataType:"jsonp"});
-									
-									
-				/////////////////////////vedo se ci sono posticipate////////////////////////////////
-									
-									/*$.ajax({
-										   type:"GET",
-										   url:"http://msop.it/aermes/check_prendiposticipata.php?id_autista="+ localStorage.getItem("id_autista") +"",
-										   contentType: "application/json",
-										   timeout: 7000,
-										   jsonp: 'callback',
-										   crossDomain: true,
-										   success:function(result){
-										   
-										   $.each(result, function(i,item){
-												  
-											  if(item.Token==1){
-												  $("#lista").show();
-											   }
-												  
-											});
-										   
-										   
-										   },
-										   error: function(){
-										   
-										    $("#led").html("<img src='img/ledrosso.png' width='25px'>");
-										    $("#led5").html("<img src='img/ledrosso.png' width='25px'>");
-										   
-										    onResume();
-										   
-										   },
-										   dataType:"jsonp"});*/
-									
-				/////////////////////////FINE vedo se ci sono posticipate////////////////////////////////					
 									
 									
 									function playAudio(id) {
@@ -11928,12 +11952,7 @@ function chatting(pass,id) {
 		   $("#led").html("<img src='img/ledrosso.png' width='25px'>");
 		   $("#led5").html("<img src='img/ledrosso.png' width='25px'>");
 		   
-		   /*navigator.notification.alert(
-										'Possibile errore di rete, riprova tra qualche minuto.',  // message
-										alertDismissed,         // callback
-										'Attenzione',           // title
-										'Ok'                  // buttonName
-										);*/
+		   
 		   
 		   
 		   },
