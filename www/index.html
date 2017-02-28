@@ -1687,7 +1687,7 @@
     <body>
 
         <div id="geolocation"></div>
-		<audio id="successSound" src="/android_asset/www/sound/button.mp3" type="audio/mpeg" ></audio>
+		<audio id="successSound" src="sound/button.mp3" type="audio/mpeg" ></audio>
 		<!--<audio id="successArrivo" src="/sound/bell.mp3" type="audio/mpeg" ></audio>-->
         
         <div data-role=page id=home class="div2">
@@ -1780,8 +1780,8 @@
         </div>
         
         <div data-role=page id="win2" data-add-back-btn=true class="div2a">
-            <audio id="successChat" src="/android_asset/www/sound/new_chat.mp3" type="audio/mpeg" ></audio>
-			<audio id="successArrivo" src="/android_asset/www/sound/button.mp3" type="audio/mpeg" ></audio>
+            <audio id="successChat" src="sound/new_chat.mp3" type="audio/mpeg" ></audio>
+			<audio id="successArrivo" src="sound/bell.mp3" type="audio/mpeg" ></audio>
 			
 			<div data-role="header" data-theme="c" data-position="fixed" data-tap-toggle="false" class="div4">
 				
@@ -2307,7 +2307,7 @@
 			<table width="100%" align="center">
 				<tr>
 					<td width="100%" align="left" colspan="3">
-						<table width="85%" align="center" class="tabellaB">
+						<table width="90%" align="center" class="tabellaB">
 							<tr>
 								<td width="250px" align="center" valign="center">
 									<font size="4" color="#fff"><b><div>DETTAGLI SPEDIZIONE</div></b></font><br>
@@ -2375,7 +2375,7 @@
 								</td>
 							</tr>
 							<tr>
-								<table width="85%" border="0" align="center" valign="center" >
+								<table width="98%" border="0" align="center" valign="center" >
 									<tr>
 										<td width="40%" align="center" valign="center">
 											<!--<a id="risp1" data-role="button" data-theme="b" class="custom-btn4R" style="display:none"><font color="#fff">Rispondi</font></a>
@@ -2429,7 +2429,7 @@
 							
 							<tr>
 								<td width="250px" align="left" valign="center">
-									<table id="pagamento" width="85%" border="0" align="center" valign="center" style="display:none">
+									<table id="pagamento" width="98%" border="0" align="center" valign="center" style="display:none">
 										<tr>
 											<td width="100%" align="center" valign="center">
 												<b><font size="4" color="fff"><div id="costocommissione">Costo commisione:</div></font></b>
@@ -2473,8 +2473,8 @@
 			
 			<div data-role="panel" id="mypanelH" style="overflow-y: scroll" data-position="right" data-display="overlay" width="100%" data-theme="b">
 				<center>
-					<audio id="successChat1" src="/android_asset/www/sound/send_chat.mp3" type="audio/mpeg" ></audio>
-					<audio id="successChat2" src="/android_asset/www/sound/new_chat.mp3" type="audio/mpeg" ></audio>
+					<audio id="successChat1" src="sound/send_chat.mp3" type="audio/mpeg" ></audio>
+					<audio id="successChat2" src="sound/new_chat.mp3" type="audio/mpeg" ></audio>
 					
 					<table border="0" width="100%" align="center">
 						<tr>
@@ -2673,7 +2673,7 @@
 								
 								<td width="100%" align="center" valign="center" colspan="2">
 									<input type="text" data-role="none" name="cognome" id="cognome" value="" placeholder="Cognome" class="scrivo2">
-										</td>
+								</td>
 							</tr>
 							<tr>
 								<td width="100%" align="center" valign="center" colspan="2">&nbsp;
@@ -2683,7 +2683,10 @@
 							<tr>
 								
 								<td width="70%" align="center" valign="center">
-									<select id="anno_nascita" name="anno_nascita" data-theme="b">
+									
+									<input type="text" data-role="none" name="anno_nascita" id="anno_nascita" value="" placeholder="gg/mm/aaaa" class="scrivo2">
+									
+									<!--<select id="anno_nascita" name="anno_nascita" data-theme="b">
 										<option value="1998">Data nascita</option>
 										<option value="1997">1997</option>
 										<option value="1996">1996</option>
@@ -2734,7 +2737,7 @@
 										<option value="1941">1941</option>
 										<option value="1940">1940</option>
 										<option value="1939">1939</option>
-									</select>
+									</select>-->
 								</td>
 							</tr>
 							<tr>

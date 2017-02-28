@@ -73,7 +73,7 @@ receivedEvent: function(id) {
 	var myScroll;
 	var myScroll2;
 	var myScroll5;
-	
+	localStorage.setItem("dovesono", "0")
 	
 	//// PUSH //////
 	
@@ -150,6 +150,7 @@ receivedEvent: function(id) {
 		
 		
 	}
+	
 	
 	
 	////////// TASTIERA ///////////
@@ -229,21 +230,17 @@ receivedEvent: function(id) {
 		window.location.href = "index.html";
 	  
 	  }*/
-	  
-	  for(i=0; i<10000; i++)
-	  {
-		window.clearInterval(i);
-	  }
-		
 							  
 	  //if(localStorage.getItem("pagina")=="1"){
 	
-			navigator.notification.confirm(
+			/*navigator.notification.confirm(
 			 'vuoi mettere in background aermes?',  // message
 			 onConfirm2,              // callback to invoke with index of button pressed
-			'Spegni',            // title
-			'Spegni,Annulla'      // buttonLabels
-		    );
+			'Chiudi',            // title
+			'Chiudi,Annulla'      // buttonLabels
+		    );*/
+			
+			window.location.href = "index.html";
 							  
 	   //}
 							  
@@ -325,7 +322,7 @@ receivedEvent: function(id) {
 		
 		//alert("A")
 			
-		playAudioA('successSound');
+		//playAudioA('successSound');
 		
 		$("#nickmio").html("<font color='#000'><b>" + localStorage.getItem("nick") + "</b></font>")
 		
@@ -462,6 +459,7 @@ receivedEvent: function(id) {
 		setTimeout(function() {
 			$("#sasa").show();
 			$("#vedere").show();
+			localStorage.setItem("dovesono", "0")
 			window.location.href = "index.html";
 		}, 1000);
 		
@@ -469,7 +467,7 @@ receivedEvent: function(id) {
 	
 		$(document).on("tap", "#esciapp", function(e){
 				   
-		  playAudio('successSound');
+		  //playAudio('successSound');
 				   
 	   	  e.stopImmediatePropagation();
 				   
@@ -498,6 +496,7 @@ receivedEvent: function(id) {
 	
 	// PER FOTOCAMERA //
 	
+	
 	$(document).on("tap", "#prendifoto", function(e){
 				   
 		navigator.camera.getPicture(uploadPhoto, onFail, { quality: 50,
@@ -507,6 +506,7 @@ receivedEvent: function(id) {
 		targetHeight: 200
 		});
 	});
+
 	
 	$(document).on("tap", "#scattafoto", function(e){
 				   
@@ -540,6 +540,7 @@ receivedEvent: function(id) {
 									 );
 	}
 	
+	
 	function onPhotoURISuccess(imageURI) {
 		// Uncomment to view the image file URI
 		// console.log(imageURI);
@@ -554,6 +555,7 @@ receivedEvent: function(id) {
 		//
 		largeImage.src = imageURI;
 	}
+	
 	
 	function uploadPhoto(imageURI) {
 		var largeImage = document.getElementById('imguser');
@@ -589,6 +591,7 @@ receivedEvent: function(id) {
 	}
 	
 	
+	
 	function win(r) {
 		console.log("Code = " + r.responseCode);
 		console.log("Response = " + r.response);
@@ -601,6 +604,7 @@ receivedEvent: function(id) {
 		/*$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");*/
+		
 		
 	}
 	
@@ -633,8 +637,6 @@ receivedEvent: function(id) {
 				   document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 300); }, false);
 				   
 				   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-				   
-				   localStorage.setItem("dovesono","3")
 				   
 				   
 				   $("#spinner6").show();
@@ -832,13 +834,10 @@ receivedEvent: function(id) {
 				   $("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
 				   $("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");*/
 
-				   
 				   //window.location.href = "index.html";
 				   
 				   //vediofferte44();
 				   //$("#spinner44").show();
-				   
-				   localStorage.setItem("dovesono","0")
 				   
 				   e.stopImmediatePropagation();
 				   
@@ -849,7 +848,6 @@ receivedEvent: function(id) {
 				   if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
 				   
 				   });
-	
 	
 	
 	
@@ -2557,6 +2555,7 @@ receivedEvent: function(id) {
 						  },
 						  dataType:"jsonp"});
 				   
+		localStorage.setItem("dovesono", "0")
 				   
 		window.location.href = "index.html?id=2";
 
@@ -2586,6 +2585,7 @@ receivedEvent: function(id) {
 						  },
 						  dataType:"jsonp"});
 
+		localStorage.setItem("dovesono", "0")
 				   
 		window.location.href = "index.html";
 	});
@@ -2957,7 +2957,8 @@ receivedEvent: function(id) {
 		   window.clearInterval(i);
 		}
 				   
-		
+		localStorage.setItem("dovesono", "0")
+				   
 		   // Chiamo funzione per dire che non sei autista
 				   $.ajax({
 						  type:"GET",
@@ -3205,7 +3206,7 @@ receivedEvent: function(id) {
 				   
 				   if (localStorage.getItem("nomefoto") === null || localStorage.getItem("nomefoto")=="null" || typeof(localStorage.getItem("nomefoto")) == 'undefined' || localStorage.getItem("nomefoto")==0 || localStorage.getItem("nomefoto")=="") {
 				   
-				   nomefoto = "default.png";
+				       nomefoto = "default.png";
 				   
 				   }
 				   else{
@@ -3606,9 +3607,9 @@ function CenterControl(controlDiv, map) {
                                  controlText.style.lineHeight = '10px';
                                  controlText.style.paddingLeft = '5px';
                                  controlText.style.paddingRight = '5px';
-                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><font color="#fff"><b>GPS</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
+                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
                                  controlUI.appendChild(controlText);
-                                 
+                                 //<font color="#fff"><b>GPS</b></font>
                                    }
                                  
                                  }
@@ -3645,7 +3646,7 @@ function CenterControl(controlDiv, map) {
 								 controlText.style.lineHeight = '10px';
 								 controlText.style.paddingLeft = '5px';
 								 controlText.style.paddingRight = '5px';
-								 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><font color="#fff"><b>GPS</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
+								 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
 								 controlUI.appendChild(controlText);
 								 
 								 }
@@ -3683,7 +3684,7 @@ function CenterControl(controlDiv, map) {
 								 controlText.style.lineHeight = '10px';
 								 controlText.style.paddingLeft = '5px';
 								 controlText.style.paddingRight = '5px';
-								 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><font color="#fff"><b>GPS</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
+								 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
 								 controlUI.appendChild(controlText);
 								 
 								 }
@@ -3723,7 +3724,7 @@ function CenterControl(controlDiv, map) {
                                  controlText.style.lineHeight = '10px';
                                  controlText.style.paddingLeft = '5px';
                                  controlText.style.paddingRight = '5px';
-                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><font color="#fff"><b>GPS</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
+                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
                                  controlUI.appendChild(controlText);
                                  
                                   }
@@ -4172,6 +4173,8 @@ function cambiah() {
 		   
 		   },
 		   dataType:"jsonp"});
+	
+	localStorage.setItem("dovesono", "0")
 
     window.location.href = "index.html";
 	
@@ -4556,12 +4559,8 @@ function onResume() {
 	  }, 700);
 	
     }
-	else if(localStorage.getItem("dovesono")=="3"){
-		
-	}
 	else{
-		//$("#mappa6").tap();
-		resetta1(1);
+		$("#mappa6").tap();
 	}
 	
 	/*var connectionStatus = false;
@@ -4605,30 +4604,6 @@ function deg2rad(deg) {
 
 
 function resetta1(focus) {
-	
-	var connectionStatus = false;
-	connectionStatus = navigator.onLine ? 'online' : 'offline';
-	
-	if(connectionStatus=='online'){
-		
-	}
-	else{
-		for(i=0; i<10000; i++)
-		{
-		  window.clearInterval(i);
-		 }
-												 
-		   window.location.href = "index.html"
-		
-		   e.stopImmediatePropagation();
-				   
-		   e.preventDefault();
-		   
-		   return false;
-		   
-		   if ($.browser.iphone || $.browser.ipad) $(this).trigger('click');
-	}
-	
 	muoviti = 1;
 	localStorage.setItem("pagemodifica","0")
 	localStorage.setItem("ritornaweb","0")
@@ -5351,35 +5326,14 @@ function resetta1(focus) {
 		   },
 		   error: function(){
 		   
-		   		if(connectionStatus=='online'){
+		   if (typeof google === 'object' && typeof google.maps === 'object') {
+					// Google maps loaded
+		   } else {
 					
-					
-					if (typeof google === 'object' && typeof google.maps === 'object') {
-				   		for(i=0; i<10000; i++)
-						{
-						  window.clearInterval(i);
-						 }
-						  setTimeout(function() {
-							 resetta1(1);
-						  }, 2000);
-					} else {
-						for(i=0; i<10000; i++)
-						{
-						  window.clearInterval(i);
-						 }
-						 
-						 window.location.href = "index.html"
-						 //$("#mappa6").tap();
-						 //localStorage.setItem("inlinea", "0")
-					}
-				
-				}
-				else{
-					window.location.href = "index.html"
-					
-					//$("#mappa6").tap();
-					//localStorage.setItem("inlinea", "0")
-				}
+		   setTimeout(function() {
+					  resetta1(1);
+					  }, 500);
+		   }
 		   
 		   },
 		   dataType:"jsonp"});
@@ -5439,7 +5393,7 @@ function resetta1(focus) {
 		tempo = 0;
 		
 		localStorage.setItem("nobanner","0")
-		//prendibanner();
+		prendibanner();
 		
 		timer()
 
@@ -5710,7 +5664,7 @@ function timer(){
 									
 									
 									if(localStorage.getItem("nobanner")=="0"){
-									  //prendibanner()
+									  prendibanner()
 									}
 									
 									
@@ -5902,7 +5856,7 @@ function timer(){
 												  }
 												  else{
 												  
-												      playAudio('successArrivo');
+												      //playAudio('successArrivo');
 													  dindon=1;
 
 												  }
@@ -6209,7 +6163,7 @@ function timer(){
 												  
 													  //alert(stato2)
 
-												      playAudio('successArrivo');
+												      //playAudio('successArrivo');
 												      dindon=1;
 												  }
 												  
@@ -6484,7 +6438,7 @@ function timer(){
 												  }
 												  else{
 
-												      playAudio('successArrivo');
+												      //playAudio('successArrivo');
 												      dindon=1;
 
 												  }
@@ -6715,43 +6669,64 @@ function timer(){
 										   },
 										   error: function(){
 										   
-											   		var connectionStatus = false;
-													connectionStatus = navigator.onLine ? 'online' : 'offline';
-													
-													if(connectionStatus=='online'){
-														
-														if (typeof google === 'object' && typeof google.maps === 'object') {
-															for(i=0; i<10000; i++)
-															{
-															  window.clearInterval(i);
-															 }
-															  setTimeout(function() {
-																 resetta1(1);
-															  }, 2000);
-														} else {
-															for(i=0; i<10000; i++)
-															{
-															  window.clearInterval(i);
-															 }
-															 
-															 window.location.href = "index.html"
-															
-														}
-													
-													}
-													else{
-														for(i=0; i<10000; i++)
-															{
-															  window.clearInterval(i);
-															 }
-															 
-														window.location.href = "index.html"
-															 
-													}
+										   // Failed to load the Google Maps
+										   if (typeof google === 'object' && typeof google.maps === 'object') {
+										   for(i=0; i<10000; i++)
+										   {
+										   window.clearInterval(i);
+										   }
+										   
+										   setTimeout(function() {
+													  resetta1(1);
+													  }, 3000);
+										   } else {
+										   for(i=0; i<10000; i++)
+										   {
+										   window.clearInterval(i);
+										   }
+										   
+										   setTimeout(function() {
+													  resetta1(1);
+													  }, 5000);
+										   }
 										   
 										   
 										   },
 										   dataType:"jsonp"});
+									
+									
+				/////////////////////////vedo se ci sono posticipate////////////////////////////////
+									
+									/*$.ajax({
+										   type:"GET",
+										   url:"http://msop.it/aermes/check_prendiposticipata.php?id_autista="+ localStorage.getItem("id_autista") +"",
+										   contentType: "application/json",
+										   timeout: 7000,
+										   jsonp: 'callback',
+										   crossDomain: true,
+										   success:function(result){
+										   
+										   $.each(result, function(i,item){
+												  
+											  if(item.Token==1){
+												  $("#lista").show();
+											   }
+												  
+											});
+										   
+										   
+										   },
+										   error: function(){
+										   
+										    $("#led").html("<img src='img/ledrosso.png' width='25px'>");
+										    $("#led5").html("<img src='img/ledrosso.png' width='25px'>");
+										   
+										    onResume();
+										   
+										   },
+										   dataType:"jsonp"});*/
+									
+				/////////////////////////FINE vedo se ci sono posticipate////////////////////////////////					
 									
 									
 									function playAudio(id) {
@@ -7956,6 +7931,17 @@ function magia3() {
 
 function elimina2(id_richiesta){
 	
+	navigator.notification.confirm(
+								   'Sei sicuro di voler cancellare la richiesta?',  // message
+								   onConfirmAB,              // callback to invoke with index of button pressed
+								   'Chiudi',            // title
+								   'Conferma,Annulla'      // buttonLabels
+								   );
+	
+	
+	function onConfirmAB(button) {
+		if(button==1){    //If User selected No, then we just do nothing
+	
 	$.ajax({
 		   type:"GET",
 		   url:"http://msop.it/aermes/check_elimina2.php?id_richiesta="+ id_richiesta +"&id_autista="+ localStorage.getItem("id_autista") +"",
@@ -7997,6 +7983,8 @@ function elimina2(id_richiesta){
 		   
 		   },
 		   dataType:"jsonp"});
+		}
+	}
 	
 }
 
@@ -8216,6 +8204,8 @@ function casa(){
 		   
 		   },
 		   dataType:"jsonp"});
+	
+	localStorage.setItem("dovesono", "0")
 	
 	window.location.href = "index.html";
 	
@@ -8460,7 +8450,7 @@ function richiesta1() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza1 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza1 +" </font><br>");
 	
-	var Punita = (Number(distanza1).toFixed(2) * 0.10).toFixed(2);
+	var Punita = (Number(distanza1).toFixed(2) * 0.12).toFixed(2);
 	
 	var totalone = (Number(costo_servizio1).toFixed(2))-(Number(Punita).toFixed(2))
 	
@@ -9075,17 +9065,21 @@ function richiesta1() {
 					  
 
 					  $(document).on("touchstart tap", "#close1", function(e){
-							$("#pass1").hide();
-							$("#blob2").hide();
 									 
-							elimina2(id)
+									
+									 $("#pass1").hide();
+									 $("#blob2").hide();
 									 
-							e.stopImmediatePropagation();
+									 elimina2(id)
 									 
-							e.preventDefault();
+									 e.stopImmediatePropagation();
 									 
-							return false;
+									 e.preventDefault();
 									 
+									 return false;
+								
+								
+ 
 						});
 					  
 	              }
@@ -9110,6 +9104,8 @@ function richiesta1() {
 					  $("#codicesicurezza").hide();
 					  
 					  $(document).on("tap", "#close1", function(e){
+									 
+						   
 							$("#pass1").hide();
 									 
 							$("#blob2").hide();
@@ -9121,6 +9117,7 @@ function richiesta1() {
 									 
 						    return false;
 									 
+									 
 					});
 					  
 				  }
@@ -9131,7 +9128,12 @@ function richiesta1() {
 					  
 					  $("#pagamento").show();
 					  
-					  var Punita = (Number(distanza1).toFixed(2) * 0.10).toFixed(2);
+					  if(Number(distanza1).toFixed(2)>40){
+						  var Punita = "4.8";
+					  }
+					  else{
+					    var Punita = (Number(distanza1).toFixed(2) * 0.12).toFixed(2);
+					  }
 					  
 					  $("#costocommissione").html("<font color='#fff'>Costo Commissione:"+Punita+"&euro;</font>");
 					  
@@ -9145,16 +9147,18 @@ function richiesta1() {
 					 });
 					  
 				   /////////////////////////////////////
-				   
+					  
+					  
 				   if(pagata1=="Si"){
-						$("#compracarta").hide();
-						$("#mostracarta").hide();
-					}
-					else{
-						$("#compracarta").show();
-						$("#mostracarta").show();
-					}
+					   $("#compracarta").hide();
+					   $("#mostracarta").hide();
+				   }
+				   else{
+					   $("#compracarta").show();
+					   $("#mostracarta").show();
+				   }
 
+					  
 					  
 				   $("#gps1").show();
 					  
@@ -9183,7 +9187,7 @@ function richiesta1() {
 				   
 					  
 					  $(document).on("touchstart", "#cell1", function(e){
-						  
+									 
 						localStorage.setItem("dovesono", "2")
 								  
 						window.location.href = "tel:+39" + cell1 + "";
@@ -9264,7 +9268,7 @@ function richiesta1() {
 				   $(document).on("touchstart tap", "#gps1", function(e){
 						
 						var addressLongLat = lat1+","+lng1;
-						
+								  
 						localStorage.setItem("dovesono", "2")
 	
 						//window.open("maps:daddr="+ addressLongLat +"" , '_system');
@@ -9515,7 +9519,7 @@ function richiesta2() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza2 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza2 +" </font><br>");
 	
-	var Punita = (Number(distanza2).toFixed(2) * 0.10).toFixed(2);
+	var Punita = (Number(distanza2).toFixed(2) * 0.12).toFixed(2);
 	
 	var totalone = (Number(costo_servizio2).toFixed(2))-(Number(Punita).toFixed(2))
 	
@@ -10050,6 +10054,8 @@ function richiesta2() {
 					  $("#codicesicurezza").hide();
 					  
 					  $(document).on("touchstart", "#close2", function(e){
+									 
+									 
 									 $("#pass2").hide();
 									 $("#blob2").hide();
 									 elimina2(id)
@@ -10060,6 +10066,7 @@ function richiesta2() {
 									 e.preventDefault();
 									 
 									 return false;
+									 
 					  });
 				  }
 	
@@ -10085,6 +10092,9 @@ function richiesta2() {
 					  
 					  
 					  $(document).on("tap", "#close2", function(e){
+									 
+									
+									 
 									 $("#pass2").hide();
 									 $("#blob2").hide();
 									 elimina2(id)
@@ -10095,6 +10105,7 @@ function richiesta2() {
 									 e.preventDefault();
 									 
 									 return false;
+									 
 					  });
 				  }
 	
@@ -10104,7 +10115,12 @@ function richiesta2() {
 					  
 					  $("#pagamento").show();
 					  
-					  var Punita = (Number(distanza2).toFixed(2) * 0.10).toFixed(2);
+					  if(Number(distanza2).toFixed(2)>40){
+						  var Punita = "4.8";
+					  }
+					  else{
+					    var Punita = (Number(distanza2).toFixed(2) * 0.12).toFixed(2);
+					  }
 					  
 					  $("#costocommissione").html("<font color='#fff'>Costo Commissione:"+Punita+"&euro;</font>");
 					  
@@ -10118,16 +10134,18 @@ function richiesta2() {
 									 });
 					  
 				   ////////////////////////////////////
-				   
+					  
+				
 				   if(pagata2=="Si"){
-						$("#compracarta").hide();
-						$("#mostracarta").hide();
-					}
-					else{
-						$("#compracarta").show();
-						$("#mostracarta").show();
-					}
+					   $("#compracarta").hide();
+					   $("#mostracarta").hide();
+				   }
+				   else{
+					   $("#compracarta").show();
+					   $("#mostracarta").show();
+				   }
 
+				
 					  
 				   $("#gps22").show();
 				   $("#risp2").hide();
@@ -10140,8 +10158,8 @@ function richiesta2() {
 						  
 						  
 						  $(document).on("tap", "#cell2", function(e){
-							  
-							  			localStorage.setItem("dovesono", "2")
+										 
+										 localStorage.setItem("dovesono", "2")
 										 
 										 window.location.href = "tel:+39"+cell2+"";
 										 
@@ -10228,8 +10246,8 @@ function richiesta2() {
 					  $(document).on("touchstart tap", "#gps22", function(e){
 
 								 var addressLongLat = lat2+","+lng2;
-								 
-								 localStorage.setItem("dovesono", "2")
+									 
+								localStorage.setItem("dovesono", "2")
 
 	                            //window.open("maps:daddr="+ addressLongLat +"" , '_system');
 								window.open("google.navigation:q="+ addressLongLat +"&mode=d" , '_system');
@@ -10489,7 +10507,7 @@ function richiesta3() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza3 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza3 +" </font><br>");
 	
-	var Punita = (Number(distanza3).toFixed(2) * 0.10).toFixed(2);
+	var Punita = (Number(distanza3).toFixed(2) * 0.12).toFixed(2);
 	
 	var totalone = (Number(costo_servizio3).toFixed(2))-(Number(Punita).toFixed(2))
 	
@@ -11139,6 +11157,8 @@ function richiesta3() {
 		$("#codicesicurezza").hide();
 		
 		$(document).on("tap", "#close3", function(e){
+					   
+
 					   $("#pass3").hide();
 					   $("#blob2").hide();
 					   
@@ -11149,6 +11169,7 @@ function richiesta3() {
 					   e.preventDefault();
 					   
 					   return false;
+					   
 					   
 		});
 	}
@@ -11174,6 +11195,8 @@ function richiesta3() {
 		$("#codicesicurezza").hide();
 		
 		$(document).on("tap", "#close3", function(e){
+
+					   
 					   $("#pass3").hide();
 					   $("#blob2").hide();
 					   
@@ -11184,7 +11207,7 @@ function richiesta3() {
 					   e.preventDefault();
 					   
 					   return false;
-					   
+   
 		});
 	}
 	
@@ -11195,7 +11218,12 @@ function richiesta3() {
 					
 					$("#pagamento").show();
 					
-					var Punita = (Number(distanza3).toFixed(2) * 0.10).toFixed(2);
+					if(Number(distanza3).toFixed(2)>40){
+						var Punita = "4.8";
+					}
+					else{
+					  var Punita = (Number(distanza3).toFixed(2) * 0.12).toFixed(2);
+					}
 					
 					$("#costocommissione").html("<font color='#fff'>Costo Commissione:"+Punita+"&euro;</font>");
 					
@@ -11210,6 +11238,7 @@ function richiesta3() {
 					
 					////////////////////////////////////
 					
+					
 					if(pagata3=="Si"){
 						$("#compracarta").hide();
 						$("#mostracarta").hide();
@@ -11218,7 +11247,6 @@ function richiesta3() {
 						$("#compracarta").show();
 						$("#mostracarta").show();
 					}
-
 					
 					
 				  $("#gps3").show();
@@ -11279,8 +11307,8 @@ function richiesta3() {
 						  
 						  
 						  $(document).on("touchstart", "#cell3", function(e){
-							  
-							  			localStorage.setItem("dovesono", "2")
+										 
+										 localStorage.setItem("dovesono", "2")
 										 
 										 window.location.href = "tel:+39"+cell3+"";
 										 
@@ -11320,9 +11348,9 @@ function richiesta3() {
 				  
 				  $(document).on("tap", "#gps3", function(e){
 
-								var addressLongLat = lat3+","+lng3;
-						
-								localStorage.setItem("dovesono", "2")
+						var addressLongLat = lat3+","+lng3;
+								 
+								 localStorage.setItem("dovesono", "2")
 	
 	                             //window.open("maps:daddr="+ addressLongLat +"" , '_system');
 								 window.open("google.navigation:q="+ addressLongLat +"&mode=d" , '_system');
@@ -11952,7 +11980,12 @@ function chatting(pass,id) {
 		   $("#led").html("<img src='img/ledrosso.png' width='25px'>");
 		   $("#led5").html("<img src='img/ledrosso.png' width='25px'>");
 		   
-		   
+		   /*navigator.notification.alert(
+										'Possibile errore di rete, riprova tra qualche minuto.',  // message
+										alertDismissed,         // callback
+										'Attenzione',           // title
+										'Ok'                  // buttonName
+										);*/
 		   
 		   
 		   },
@@ -12446,8 +12479,10 @@ function inviachat(id) {
 									 );
 		return;
 	}
-	
+	 
 	setTimeout(function() {
+			   
+	//alert("http://msop.it/aermes/pubblica_chat_autista.php?id_messaggio="+ localStorage.getItem("id_richiesta") +"&nick="+ localStorage.getItem("nickpass") +"&messaggio="+ indirizzo +"")
 	
 	$.ajax({
 		   type:"GET",
@@ -12481,8 +12516,8 @@ function inviachat(id) {
 				  
 				    //$("#btnpanel").click();
 					//controllachat2()
-					
-					chatting66(1,localStorage.getItem("id_richiesta"))
+				  
+				    chatting66(1,localStorage.getItem("id_richiesta"))
 					
 				  }
 				  

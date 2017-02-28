@@ -234,6 +234,10 @@
 			width: 260px;
 		}
 		
+		.custom-btn4 {
+			width: 130px;
+		}
+		
 		.custom-btnIPAD {
 			width: 90%;
 		}
@@ -471,10 +475,10 @@ a {text-decoration:none;}
 		.div56 {
 			background-color: #00b28c;
 			position: absolute;
-			bottom: 60px;
+			bottom: 20px;
 			
 			width: 300px;
-			height: 370px;
+			height: 470px;
 			color: #000;
 			
 			text-align: center;
@@ -482,7 +486,7 @@ a {text-decoration:none;}
 			
 			font-size: 22px;
 			
-			top:260px;
+			top:310px;
 			left:50%;
 			padding:15px;
 			-ms-transform: translateX(-50%) translateY(-50%);
@@ -502,10 +506,10 @@ a {text-decoration:none;}
 		.div566 {
 			background-color: #fff;
 			position: absolute;
-			bottom: 60px;
+			bottom: 20px;
 			
 			width: 300px;
-			height: 370px;
+			height: 470px;
 			color: #000;
 			
 			text-align: center;
@@ -513,7 +517,7 @@ a {text-decoration:none;}
 			
 			font-size: 22px;
 			
-			top:260px;
+			top:310px;
 			left:50%;
 			padding:15px;
 			-ms-transform: translateX(-50%) translateY(-50%);
@@ -528,6 +532,19 @@ a {text-decoration:none;}
 			
 			opacity: 0.2;
 			filter: alpha(opacity=20);
+		}
+		
+		.ciao {
+			background-color: #000;
+			
+			height: 100%;
+			
+			border-radius: 5px;
+			-moz-border-radius: 5px; /* firefox */
+			-webkit-border-radius: 5px; /* safari, chrome */
+			
+			/*opacity: 0.8;
+			filter: alpha(opacity=80);*/
 		}
 
 
@@ -547,7 +564,8 @@ a {text-decoration:none;}
 			<center>
 			<br><img id="#" src="img/bianco.png" width="160px"><br><br><br>
 				
-				<table id="blobstart" width="100%" border="0" align="center" valign="center" class="div56" >
+				
+			<table id="blobstart" width="100%" border="0" align="center" valign="center" class="div56" >
 				 <tr>
 					 <td width="100%" align="center">
 						 <table align="center" width="100px" height="100%">
@@ -563,11 +581,32 @@ a {text-decoration:none;}
 				 
 			 </table>
 
-
 			<table id="formreg" align="center" width="270px" border="0">
 				<tr>
+					<td align="center" width="30%">
+						
+						<font class="logintext" ><font color="#fff" size="4"><b>ENTRA</b></font></font>
+					</td>
+					<td align="left" width="60%">
+						<table width="70%" height="100%" align="left" border="0">
+							<td align="center" height="100%"><font class="logintext" ><a id="regsito" href="#" data-role="button" class="custom-btnIPAD" data-theme="d"><font size="4">ISCRIVITI</font></a></td>
+							</tr>
+						</table>
+
+						 <!--<a id="regsito" href="#" data-role="button" class="custom-btnIPAD" data-theme="b"><font size="4">ISCRIVITI</font></a> 
+						  <font class="logintext" ><font color="#00b28c" size="4"><b>ISCRIVITI</b></font>
+						  <a id="regsito" href="#"><font color="#00b28c" size="4"><b>ISCRIVITI</b></font></a>
+						  -->
+
+					</td>
+				</tr>
+				
+				<tr>
 					<td colspan="2" align="center">
-						<font class="logintext" ><font color="#fff"><b>LOGIN</b></font></font>
+						<table width="100%" align="center" valign="center" border="0"><tr><td width="33%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td><td width="34%" align="center" valign="center">
+						<font class="logintext" ><font color="#fff"><b>LOGIN</b></font></font></td>
+						<td width="33%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td>
+						</tr></table>
 					</td>
 				</tr>
 				<tr>
@@ -577,7 +616,7 @@ a {text-decoration:none;}
 				</tr>
 				<tr>
 					<td colspan="2" align="left">
-						<font size="4" class="logintext"><font color="#fff">USERNAME</font></font>
+						&nbsp;&nbsp;<font size="4" class="logintext"><font color="#fff">USERNAME</font></font>
 					</td>
 				</tr>
 				<tr id="campireg">
@@ -594,7 +633,7 @@ a {text-decoration:none;}
 				</tr>
 				<tr>
 					<td colspan="2" align="left">
-						<font size="4" class="logintext"><font color="#fff">PASSWORD</font></font>
+						&nbsp;&nbsp;<font size="4" class="logintext"><font color="#fff">PASSWORD</font>
 					</td>
 				</tr>
 				<tr>
@@ -603,10 +642,10 @@ a {text-decoration:none;}
 					</td>
 				</tr>
 				<tr>
-					<td align="left">
+					<td align="ceter" width="65%">
 						<a id="emaildimenticata"><font class="logintext"><div id="btnpsw"><font color="#fff">Password dimenticata?</font></div></font></a>
 					</td>
-					<td align="right">
+					<td align="center" width="35%">
 						<a id="logoutfacebook"><font class="logintext"><div id="btnpsw"><font color="#fff">Esci da Facebook</font></div></font></a>
 					</td>
 				</tr>
@@ -634,21 +673,30 @@ a {text-decoration:none;}
 				
 
 				</form>
+				
 				<tr>
 					<td colspan="2" align="center">
 						
-						<!--<div id="stamp"></div>--><font class="logintext" ><font color="#fff">OPPURE</font></font>
+						<table width="100%"><tr><td width="33%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td><td width="34%" align="center" valign="center">
+							<font class="logintext" ><font color="#fff"><b>OPPURE</b></font></font></td>
+							<td width="33%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td>
+							</tr></table>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<a href="#" id="accedifb" data-role="button" class="custom-btn" data-theme="e"><font color="#FFF" size="4"><div id="btnaccedifb">Accedi con Facebook</div></font></a>
+						&nbsp;
 					</td>
 				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<a href="#" id="accedifb"><img src="img/Facebook.png" width="100%"></a>
+						<!--<a href="#" id="accedifb" data-role="button" class="custom-btn" data-theme="e"><font color="#FFF" size="4"><div id="btnaccedifb">Accedi con Facebook</div></font></a>-->
+					</td>
+				</tr>
+				
 
 			</table>
-			<br><br>
-			<a id="regsito" href="#" data-role="button" class="custom-btn" data-theme="b"><font size="4">ISCRIVITI</font></a>
 			
 			</center>
 			
@@ -689,18 +737,32 @@ a {text-decoration:none;}
 							
 							<table id="formreg" align="center" width="270px" border="0">
 								<tr>
-									<td colspan="2" align="center">
-										<font class="logintext" ><font color="#fff"><b>REGISTRATI CON LA TUA EMAIL</b></font></font>
+									<td align="center" width="70%">
+										<table width="70%" height="100%" align="center" border="0"><tr><td align="center" height="100%">
+										<a id="accedi2" href="#" data-role="button" class="custom-btnIPAD" data-theme="b"><font size="4">ENTRA</font></a></td></tr></table>
+
+										<!--<font class="logintext" ><font color="#fff" size="4"><b>ENTRA</b></font></font>-->
 									</td>
-								</tr>
-								<tr>
-									<td colspan="2" align="center">&nbsp;
+									<td align="center" width="30%">
 										
+										<font class="logintext" ><font color="#fff" size="4"><b>ISCRIVITI</b></font></font>
+											
 									</td>
 								</tr>
+
+						 
+								<tr>
+									<td colspan="2" align="center">
+										<table width="100%" align="center" valign="center" border="0"><tr><td width="28%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td><td width="44%" align="center" valign="center">
+											<font class="logintext" ><font color="#fff"><b>REGISTRATI</b></font></font></td>
+										<td width="28%" align="center" valign="center"><img src="img/orizzontale.png" width="100%"></td>
+										</tr></table>
+									</td>
+								</tr>
+								
 								<tr>
 									<td colspan="2" align="left">
-										<font size="4" class="logintext"><font color="#fff">USERNAME</font></font>
+										&nbsp;&nbsp;<font size="4" class="logintext"><font color="#fff">USERNAME</font></font>
 									</td>
 								</tr>
 								
@@ -713,12 +775,12 @@ a {text-decoration:none;}
 								</tr>
 								<tr>
 									<td colspan="2" align="center">&nbsp;
-										
+										&nbsp;
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="left">
-										<font size="4" class="logintext"><font color="#fff">PASSWORD</font></font>
+										&nbsp;&nbsp;<font size="4" class="logintext"><font color="#fff">PASSWORD</font></font>
 									</td>
 								</tr>
 								<tr>
@@ -728,12 +790,12 @@ a {text-decoration:none;}
 								</tr>
 								<tr>
 									<td colspan="2" align="center">&nbsp;
-										
+										&nbsp;
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="left">
-										<font size="4" class="logintext"><font color="#fff">CELLULARE</font></font>
+										&nbsp;&nbsp;<font size="4" class="logintext"><font color="#fff">CELLULARE</font></font>
 									</td>
 								</tr>
 								<tr>
@@ -741,38 +803,36 @@ a {text-decoration:none;}
 										<input type="text" data-role="none" name="cellulare" id="cellulare" value="" placeholder="cellulare" class="scrivo">
 									</td>
 								</tr>
-                                
+								
 								<tr>
 									<td colspan="2" align="center">&nbsp;
-										
-									</td>
-								</tr>
-								
-								
-								<tr>
-									<td colspan="2" align="center">
-										<a href="#" id="polici"><font class="logintext" ><img src="img/back.png" height="16px"><font color="#fff" size="3"><b>LEGGI TERMINI E CONDIZIONI</b></font></font></a>
+										&nbsp;
 									</td>
 								</tr>
 								<tr>
-									<td colspan="2" align="center">
+									<td align="center" width="15%">
+										<a href="#" id="polici"><font class="logintext" ><img src="img/back.png" height="16px"><font color="#fff" size="2">Termini e Condizioni</font></font></a>
+									</td>
+									<td align="center" width="85%">
 										<label>
-											<input type="checkbox" name="accettap" id="accettap" style="min-height:30px;min-width:30px;" checked>Termini e Condizioni
+											<input type="checkbox" name="accettap" id="accettap" style="min-height:30px;min-width:30px;" checked>Accetta
 										</label>
 									</td>
 								</tr>
-                                
+								
+								
 								<tr>
 									<td colspan="2" align="center">
 										<a href="#" id="iscriviti" data-role="button" class="custom-btn" data-theme="b"><font size="4">REGISTRATI</font></a>
 									</td>
+									
 								</tr>
+								
 								
 								</form>
 								
 							</table>
-                            
-							<a id="accedi2" href="#" data-role="button" class="custom-btn" data-theme="d"><font size="4">ENTRA</font></a>
+							
 							
 							</center>
 					

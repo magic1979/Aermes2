@@ -86,7 +86,7 @@ function onDeviceReady() {
 	
 	//cordova.plugins.diagnostic.isLocationEnabled(successCallback, errorCallback);
 	
-	cordova.plugins.locationAccuracy.canRequest(function(canRequest){
+	/*cordova.plugins.locationAccuracy.canRequest(function(canRequest){
 		if(canRequest){
 			cordova.plugins.locationAccuracy.request(function (success){
 			//alert("Successfully requested accuracy: "+success.message);
@@ -99,7 +99,7 @@ function onDeviceReady() {
 				}
 			}, cordova.plugins.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY);
 		}
-	});
+	});*/
 	
 	
 
@@ -403,12 +403,7 @@ function onDeviceReady() {
 	
     // CHIUSURA ANDROID ///////
     document.addEventListener('backbutton', function(e) {
-		
-			for(i=0; i<10000; i++)
-			{
-				window.clearInterval(i);
-			}
-			
+                              
 			if(localStorage.getItem("pagina")=="log"){
 								  
 				navigator.notification.confirm(
@@ -856,6 +851,7 @@ function onDeviceReady() {
 				   
 	});
 	
+	
 	$(document).on("tap", "#polici", function(e){
 				   
 		var ref = window.open('http://www.aermes.eu/termini-e-condizioni/', '_system', 'location=no');
@@ -1157,7 +1153,7 @@ function onDeviceReady() {
                    
                    //// ANDROID ////
 				   
-				   $('#nome').focus(function(){
+				   /*$('#nome').focus(function(){
 									//window.scrollTo(0, 100);
 									//document.body.scrollTop = $(this).offset().top;
 						myScroll3.scrollToElement("#emailreg", "1s");
@@ -1173,7 +1169,7 @@ function onDeviceReady() {
 						$('#pinreg').blur();
 								  
 						cordova.plugins.Keyboard.close();
-					});
+					});*/
 				   
 				   
 		//var ref = window.open('http://www.purplemiles.com/www/enter.php?lang='+ localStorage.getItem("lingua") +'', '_system', 'location=no');
@@ -1298,7 +1294,7 @@ function onDeviceReady() {
 			
 			//document.getElementById("email").value = localStorage.getItem("email2")
 		
-			
+
 			var watchID = navigator.geolocation.getCurrentPosition(gpsonSuccess, gpsonError, {timeout: 10000, enableHighAccuracy: true, maximumAge: 0 });
 			
 		}
@@ -3495,6 +3491,7 @@ function iscriviti(){
 	
 	
 	if (document.getElementById('accettap').checked) {
+		
 	
 	$("#spinner2").show();
 	$.ajax({
@@ -3548,6 +3545,8 @@ function iscriviti(){
 		   
 		   },
 		   dataType:"jsonp"});
+		
+		
 	}
 	else{
 		navigator.notification.alert(
@@ -3735,14 +3734,14 @@ function gpsonSuccess(position){
 	
 	localStorage.setItem("geostory", "SI")
 	
-	/*alert('Latitude: '          + position.coords.latitude          + '\n' +
+	alert('Latitude: '          + position.coords.latitude          + '\n' +
 	 'Longitude: '         + position.coords.longitude         + '\n' +
 	 'Altitude: '          + position.coords.altitude          + '\n' +
 	 'Accuracy: '          + position.coords.accuracy          + '\n' +
 	 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
 	 'Heading: '           + position.coords.heading           + '\n' +
 	 'Speed: '             + position.coords.speed             + '\n' +
-	 'Timestamp: '         + position.timestamp                + '\n');*/
+	 'Timestamp: '         + position.timestamp                + '\n');
 	
 	
 	//$("#distanza").html("<span style = 'font-size: 18px;'>"+ position.coords.speed +","+ position.coords.heading  +"</span>");
