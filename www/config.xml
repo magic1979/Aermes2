@@ -96,7 +96,7 @@
 		<!--<plugin name="cordova-plugin-mauron85-background-geolocation" version="2.2.0"/>-->
 		
 		<plugin name="com.darktalker.cordova.screenshot" source="npm" />
-		<plugin name="com-admob-plugin" spec="5.3.1" source="npm"/>
+		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		
