@@ -126,6 +126,7 @@ function onDeviceReady() {
 								 
 								 }
 								 
+								 
 								 if(results.rows.item(i).id_traduzione == "h7valutazione"){
 								 h7valutazione = results.rows.item(i).italiano.replace("P0011", "'");
 								 
@@ -1170,12 +1171,14 @@ function onDeviceReady() {
 	
 	document.addEventListener('backbutton', function(e) {
 							  
-	        navigator.notification.confirm(
+	        /*navigator.notification.confirm(
 			'vuoi mettere in background aermes?',  // message
 			onConfirm2,              // callback to invoke with index of button pressed
 			'Chiudi',            // title
 			'Chiudi,Annulla'      // buttonLabels
-			);
+			);*/
+			
+			window.location.href = "index.html";
 							  
 							  
 		}, false);
@@ -1687,8 +1690,8 @@ function onDeviceReady() {
 				   $("#s_arrivo").hide();
 				   $("#s_partenza2").show();
 				   
-				   $("#da1").html("<img src='Icone/Pin.png' width='55px'>");
-				   $("#a1").html("<img src='Icone/Flag.png' width='45px'>");
+				   $("#da1").html("<img src='icone/Pin.png' width='55px'>");
+				   $("#a1").html("<img src='icone/Flag.png' width='45px'>");
 				  
 				   /*if(screen.width < 768){
 				     $("#da1").html("<img src='img/ico_start3.png' width='55px'>");
@@ -1787,7 +1790,7 @@ function onDeviceReady() {
 		}
 				   
 		$("#piu").html("<img src='img/ico_go1.png' width='45px'>");
-		$("#anteprima").html("<img src='Icone/Informazioni.png' width='45px'>");
+		$("#anteprima").html("<img src='icone/Informazioni.png' width='45px'>");
                    
         ripetiseleziona();
 				   
@@ -2442,8 +2445,8 @@ function onDeviceReady() {
 				   $("#s_arrivo").show();
 				   
 				   
-				   $("#da1").html("<img src='Icone/Pin.png' width='45px'>");
-				   $("#a1").html("<img src='Icone/Flag.png' width='55px'>");
+				   $("#da1").html("<img src='icone/Pin.png' width='45px'>");
+				   $("#a1").html("<img src='icone/Flag.png' width='55px'>");
 				   
 				   
 				   /*if(screen.width < 768){
@@ -3807,10 +3810,10 @@ function CenterControl(controlDiv, map) {
 	controlText.style.paddingRight = '0px';
 	//controlText.innerHTML = '<table width="100%" class="xalto" border="0"><tr><td align="right">&nbsp;<br><br><br></td></tr></table><table width="100%" border="0" valign="center" align="center" ><tr><td align="center" ><a id="quando" href="#"><img src="img/ico_quando1.png" width="45px"></a></td><td align="center" ><a id="da1" href="#"><img src="img/ico_start3.png" width="55px"></a></td><td align="center" ><a id="a1" href="#"><img src="img/ico_finish1.png" width="45px"></a></td><td align="center" ><a id="piu" href="#"><img src="img/ico_plus1.png" width="45px"></a></td><td align="center" ><a id="anteprima" href="#" ><img src="img/ico_anteprima1.png" width="45px"></td><td align="center" ><a id="offerte" href="#" ><img src="img/ico_offerte1.png" width="45px"></a></td></tr><tr><td align="center" valign="center" colspan="6"><table border="0" width="100%" align="center" valign="center" class="bannertbl"><tr><td align="center" valign="center">&nbsp;<br></td></tr></table><table border="0" width="100%" align="center" valign="center" class="bannertbl2"><tr><td align="center" valign="center">&nbsp;<font size="4" color="#fff"><div id="s_partenza2" valign="center"><b>Scegli la partenza</b><br></div><div id="s_arrivo" style="display:none" valign="center"><b>Scegli l\'arrivo</b></div></font><br></td></tr></table><table border="0" width="100%" align="right" valign="top" class="bannertbl3"><tr><td align="right" valign="top">&nbsp;&nbsp;<a id="XX3" href="#" rel="external"><img src="img/ico_close1.png" width="45px"></a></td></tr></table>';
 	
-	//<td align="center" ><a id="anteprima" href="#" ><img src="Icone/informazioni.png" width="45px"></td>
+	//<td align="center" ><a id="anteprima" href="#" ><img src="icone/informazioni.png" width="45px"></td>
 	
 	//if(screen.width < 768){
-	controlText.innerHTML = '<table width="100%" border="0" valign="center" align="center" class="div23"><tr><td width="100%" align="center"  colspan="9"><br><font color="#fff"><b>SPEDISCI PACCO</b></td></tr><tr><td align="center" valign="center" colspan="9" valign="center"></td></tr><tr><td align="center" valign="center" width="19%"><a id="quando" href="#"><img src="Icone/Clock.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" valign="center" width="18%"><a id="da1" href="#"><img src="Icone/Pin.png" width="55px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="18%">&nbsp;<a id="a1" href="#"><img src="Icone/Flag.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="18%" valign="center"><a id="piu" href="#"><img src="img/ico_go1.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="19%" valign="center">&nbsp;<a id="offerte" href="#" ><img src="Icone/Informazioni.png" width="45px"></a></td></tr><tr><td align="center" valign="center" colspan="9" valign="center"><img src="img/orizzontale.png" width="98%"></td></tr><tr><td align="center" valign="center" colspan="9"><font color="#fff"><div id="sottomappa">Punto di ritiro del pacco</div></font></td></tr></table>';
+	controlText.innerHTML = '<table width="100%" border="0" valign="center" align="center" class="div23"><tr><td width="100%" align="center"  colspan="9"><br><font color="#fff"><b>SPEDISCI PACCO</b></td></tr><tr><td align="center" valign="center" colspan="9" valign="center"></td></tr><tr><td align="center" valign="center" width="19%"><a id="quando" href="#"><img src="icone/Clock.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" valign="center" width="18%"><a id="da1" href="#"><img src="icone/Pin.png" width="55px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="18%">&nbsp;<a id="a1" href="#"><img src="icone/Flag.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="18%" valign="center"><a id="piu" href="#"><img src="img/ico_go1.png" width="45px"></a></td><td align="center" valign="center" width="2%"><img src="img/verticale.png" height="45"></td><td align="center" width="19%" valign="center">&nbsp;<a id="offerte" href="#" ><img src="icone/Informazioni.png" width="45px"></a></td></tr><tr><td align="center" valign="center" colspan="9" valign="center"><img src="img/orizzontale.png" width="98%"></td></tr><tr><td align="center" valign="center" colspan="9"><font color="#fff"><div id="sottomappa">Punto di ritiro del pacco</div></font></td></tr></table>';
 	/*}
 	else
 	{
