@@ -307,11 +307,7 @@ receivedEvent: function(id) {
 	if(connectionStatus=='online'){
 		$('#noconn').hide();
 		//controllachat(1)
-		
-		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
-		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
-		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
-		
+	
 		//alert("http://www.msop.it/public/rides/"+localStorage.getItem("fotoprof")+".jpg")
 		
 		localStorage.setItem("aspetta","0")
@@ -336,6 +332,12 @@ receivedEvent: function(id) {
 		}, 200);
 		
 		}
+		
+		
+		$("#imgutente").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+		$("#imgfoto").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+		$("#imguser").attr("src","http://www.msop.it/public/rides/"+localStorage.getItem("nomefoto")+".jpg");
+		
 		
 		/////// GEO TRAKER IOS //////
 		
@@ -689,11 +691,11 @@ receivedEvent: function(id) {
 								 
 								 document.getElementById("nome").value = item.nome
 								 document.getElementById("cognome").value = item.cognome
-								 $("#anno_nascita").append("<option value='"+ item.anno_nascita +"' selected>"+ item.anno_nascita +"</option>")
-								 $("#anno_nascita").selectmenu('refresh');
+								 document.getElementById("anno_nascita").value = item.anno_nascita
 								 
 								 document.getElementById("veicolo").value = item.veicolo
 								 document.getElementById("cell").value = item.cell
+								 document.getElementById("patente").value = item.patente
 								 
 								 /*document.getElementById("patente").value = item.patente
 								 document.getElementById("patentemese").value = item.patentemese
@@ -1132,6 +1134,7 @@ receivedEvent: function(id) {
 	var cod_sicurezza1
 	var grandezza1
 	var pagata1
+	var pagamento1
 
 	
 	var nick2;
@@ -1166,6 +1169,7 @@ receivedEvent: function(id) {
 	var cod_sicurezza2
 	var grandezza2
 	var pagata2
+	var pagamento2
 	
 	var nick3;
 	var quando3;
@@ -1199,6 +1203,7 @@ receivedEvent: function(id) {
 	var cod_sicurezza3
 	var grandezza3
 	var pagata3
+	var pagamento3
 	
 	var muoviti;
 	var setGPS;
@@ -3124,6 +3129,16 @@ receivedEvent: function(id) {
 	
 	
 	$(document).on("touchstart", "#back333", function(e){
+		
+		          if (document.getElementById("patente").value == "") {
+				  	 navigator.notification.alert(
+												'inserire un codice fiscale',  // message
+												alertDismissed,         // callback
+												'Codice Fiscale',            // title
+												'OK'                  // buttonName
+												);
+				   return;
+				   }
 				   
 				   /*if (document.getElementById("veicolo").value == "") {
 				   navigator.notification.alert(
@@ -5031,6 +5046,7 @@ function resetta1(focus) {
 				  distanza1 = item.distanza1
 				  stato1 = item.stato
 				  pagata1 = item.pagata
+				  pagamento1 = item.pagamento
 				  lng1 = item.lng
 				  lat1 = item.lat
 				  
@@ -5134,6 +5150,7 @@ function resetta1(focus) {
 				  distanza2 = item.distanza1
 				  stato2 = item.stato
 				  pagata2 = item.pagata
+				  pagamento2 = item.pagamento
 				  lng2 = item.lng
 				  lat2 = item.lat
 				  
@@ -5233,6 +5250,7 @@ function resetta1(focus) {
 				  distanza3 = item.distanza1
 				  stato3 = item.stato
 				  pagata3 = item.pagata
+				  pagamento3 = item.pagamento
 				  lng3 = item.lng
 				  lat3 = item.lat
 				  
@@ -5824,6 +5842,7 @@ function timer(){
 												  distanza1 = item.distanza1
 												  stato1 = item.stato
 												  pagata1 = item.pagata
+												  pagamento1 = item.pagamento
 												  lng1 = item.lng
 												  lat1 = item.lat
 												  cod1 = item.cod_autista
@@ -6133,6 +6152,7 @@ function timer(){
 												  distanza2 = item.distanza1
 												  stato2 = item.stato
 												  pagata2 = item.pagata
+												  pagamento2 = item.pagamento
 												  lng2 = item.lng
 												  lat2 = item.lat
 												  cod2 = item.cod_autista
@@ -6426,6 +6446,7 @@ function timer(){
 												  distanza3 = item.distanza1
 												  stato3 = item.stato
 												  pagata3 = item.pagata
+												  pagamento3 = item.pagamento
 												  lng3 = item.lng
 												  lat3 = item.lat
 												  cod3 = item.cod_autista
@@ -8492,6 +8513,8 @@ function richiesta1() {
 	
 	$("#grandezza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Grandezza pacco:&nbsp; </b>"+ grandezza1 +"</font><br>");
 	
+	$("#metpagamento").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Pagamento:&nbsp; </b>"+ pagamento1 +"</font><br>");
+	
 	
 	document.getElementById("soldini").value = Number(totalone).toFixed(2)
 	
@@ -9183,14 +9206,36 @@ function richiesta1() {
 				   /////////////////////////////////////
 					  
 					  
-				   if(pagata1=="Si"){
+				    if(pagata1=="Si"){
 					   $("#compracarta").hide();
 					   $("#mostracarta").hide();
+					   
+					   $("#close1").show();
+					   
 				   }
 				   else{
 					   $("#compracarta").show();
 					   $("#mostracarta").show();
+					   
+					   $("#close1").hide();
+					  
 				   }
+					  
+					  $(document).on("tap", "#close1", function(e){
+									 
+							$("#pass1").hide();
+									 
+							$("#blob2").hide();
+							elimina2(id)
+									 
+							e.stopImmediatePropagation();
+									 
+							e.preventDefault();
+									 
+						    return false;
+									 
+									 
+						});
 
 					  
 					  
@@ -9560,6 +9605,8 @@ function richiesta2() {
 	$("#costocalcolato").html("&nbsp;&nbsp;"+Number(totalone).toFixed(2)+"&euro;");
 	
 	$("#grandezza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Grandezza pacco:&nbsp; </b>"+ grandezza2 +"</font><br>");
+	
+	$("#metpagamento").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Pagamento:&nbsp; </b>"+ pagamento2 +"</font><br>");
 	
 	
 	document.getElementById("soldini").value = Number(totalone).toFixed(2)
@@ -10173,11 +10220,32 @@ function richiesta2() {
 				   if(pagata2=="Si"){
 					   $("#compracarta").hide();
 					   $("#mostracarta").hide();
+
+					   $("#close2").show();
+					   
 				   }
 				   else{
 					   $("#compracarta").show();
 					   $("#mostracarta").show();
+
+					   $("#close2").hide();
 				   }
+					  
+					  $(document).on("tap", "#close2", function(e){
+									 
+									 
+									 $("#pass2").hide();
+									 $("#blob2").hide();
+									 elimina2(id)
+									 
+									 
+									 e.stopImmediatePropagation();
+									 
+									 e.preventDefault();
+									 
+									 return false;
+									 
+						});
 
 				
 					  
@@ -10548,6 +10616,8 @@ function richiesta3() {
 	$("#costocalcolato").html("&nbsp;&nbsp;"+Number(totalone).toFixed(2)+"&euro;");
 	
 	$("#grandezza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Grandezza pacco:&nbsp; </b>"+ grandezza3 +"</font><br>");
+	
+	$("#metpagamento").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Pagamento:&nbsp; </b>"+ pagamento3 +"</font><br>");
 	
 	
 	document.getElementById("soldini").value = Number(totalone).toFixed(2)
@@ -11276,11 +11346,34 @@ function richiesta3() {
 					if(pagata3=="Si"){
 						$("#compracarta").hide();
 						$("#mostracarta").hide();
+
+						$("#close3").show();
 					}
 					else{
 						$("#compracarta").show();
 						$("#mostracarta").show();
+
+						$("#close3").hide();
 					}
+					
+
+					
+					$(document).on("tap", "#close3", function(e){
+								   
+								   
+						$("#pass3").hide();
+						$("#blob2").hide();
+								   
+						elimina2(id)
+								   
+						e.stopImmediatePropagation();
+								   
+						e.preventDefault();
+								   
+						return false;
+								   
+								   
+					});
 					
 					
 				  $("#gps3").show();

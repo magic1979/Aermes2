@@ -99,7 +99,6 @@
 		<gap:plugin name="cordova-plugin-admobpro" source="npm" />
 		
 		<!--<gap:plugin name="cordova-plugin-admobpro" source="npm" />
-		
 		<plugin name="com-admob-plugin" source="npm"/>
 		<plugin name="phonegap-admob" source="npm"/>-->
 		
