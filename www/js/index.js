@@ -299,6 +299,10 @@ receivedEvent: function(id) {
 	var lat = localStorage.getItem("lat");
 	var lng = localStorage.getItem("lng");
 	
+	$("#datastart").focus(function() {
+		mostracal();
+	});
+	
 	
 	$(".spinner").show();
 	var connectionStatus = false;
@@ -2440,6 +2444,10 @@ receivedEvent: function(id) {
 				   $("#modificastart").hide();
 				   $("#modificastart2").hide();
 				   
+				   $("#arrivoastart").hide();
+				   localStorage.setItem("arrivoastart","")
+				   localStorage.setItem("datastart","")
+				   
 				   $("#btnGPS").removeClass("button_gps").addClass("button_gps_fade");
 				   $("#Modifica").removeClass("button_gps_fade").addClass("button_gps");
 				   
@@ -2467,6 +2475,9 @@ receivedEvent: function(id) {
 				   
 				   
 				   document.getElementById("modificastart").value = "";
+				   
+				   $("#arrivoastart").show();
+				   
 				   $("#modificastart").show();
 				   $("#modificastart2").show();
 				   
@@ -3094,22 +3105,51 @@ receivedEvent: function(id) {
 				   
 				   if(localStorage.getItem("setGPS") == 1){
 				   
-					 if (document.getElementById("modificastart").value == "") {
-						 navigator.notification.alert(
-												alertgps,  // message
-												alertDismissed,         // callback
-												indirizzob,            // title
-												'OK'                  // buttonName
-												);
+						 if (document.getElementById("modificastart").value == "") {
+							 navigator.notification.alert(
+													alertgps,  // message
+													alertDismissed,         // callback
+													indirizzob,            // title
+													'OK'                  // buttonName
+													);
+					   
+							 return;
+						   }
+					   
+						   if (document.getElementById("arrivostart").value == "") {
+							 navigator.notification.alert(
+														  'Inserire una citta di destinazione',  // message
+														  alertDismissed,         // callback
+														  indirizzob,            // title
+														  'OK'                  // buttonName
+														  );
+					   
+							  return;
+						   }
 				   
-						 return;
-					   }
+				   
+						   if (document.getElementById("datastart").value == "DATA SPEDIZIONE") {
+							 navigator.notification.alert(
+														  'Inserire una data valida',  // message
+														  alertDismissed,         // callback
+														  indirizzob,            // title
+														  'OK'                  // buttonName
+														  );
+					   
+							 return;
+						   }
+				   
 				   }
+				   
 				   
 				   
 				   localStorage.setItem("pagina","inizia")
 				   
 				   $("#win2header").html(s_partenza);
+				   
+				   $("#btnGPS").hide();
+				   $("#Modifica").hide();
+				   
 				   
 				   	setTimeout(function() {
 						start();
@@ -3622,7 +3662,7 @@ function CenterControl(controlDiv, map) {
                                  controlText.style.lineHeight = '10px';
                                  controlText.style.paddingLeft = '5px';
                                  controlText.style.paddingRight = '5px';
-                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr></table><br>';
+                                 controlText.innerHTML = '<table width="100%" border="0" class="tblmappa6" valign="top"><tr><td align="center" width="100%"><br><a id="btnGPS" href="#" class="button_gps_fade"><img src="img/navigatore.png" width="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="Modifica" href="#" class="button_gps"><font color="#fff"><b>'+btnModifica+'</b></font></a></td></tr><tr><td align="center" width="100%"></td></tr></table><br>';
                                  controlUI.appendChild(controlText);
                                  //<font color="#fff"><b>GPS</b></font>
                                    }
@@ -4982,10 +5022,42 @@ function resetta1(focus) {
 		$("#lista").hide();
 		
 		$("#loading").show();
+		
+		
+		var arrivo = document.getElementById("arrivostart").value
+		 var partenza = document.getElementById("modificastart").value
+		 var datastart = document.getElementById("datastart").value
+		
+		
+		 if(localStorage.getItem("setGPS") == 1){
+			 
+		   var arrivo = document.getElementById("arrivostart").value
+		   var partenza = document.getElementById("modificastart").value
+		   var datastart = document.getElementById("datastart").value
+			 
+		   localStorage.setItem("arrivo", arrivo);
+		   localStorage.setItem("partenza", partenza);
+		   localStorage.setItem("datastart", datastart);
+			 
+		 }
+		
+		 else{
+			 
+			 var arrivo = ""
+			 var partenza = ""
+			 var datastart = ""
+			 
+			 localStorage.setItem("arrivo", "");
+			 localStorage.setItem("partenza", "");
+			 localStorage.setItem("datastart", "");
+			 
+		 }
+		
+		
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/aermes/check_richiesta_autistaV4.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
+		   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
 		   contentType: "application/json",
 		   //data: {ID: "Lazio"},
 		   timeout: 7000,
@@ -5739,9 +5811,27 @@ function timer(){
 									
 									//alert("http://msop.it/aermes/check_richiesta_autistaV4.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"")
 									
+									if(localStorage.getItem("setGPS") == 1){
+									
+										var arrivo = localStorage.getItem("arrivo")
+										var partenza = localStorage.getItem("partenza")
+										var datastart = localStorage.getItem("datastart")
+									
+									
+									}
+									
+									else{
+									
+										var arrivo = ""
+										var partenza = ""
+										var datastart = ""
+									
+
+									}
+									
 									$.ajax({
 										   type:"GET",
-										   url:"http://msop.it/aermes/check_richiesta_autistaV4.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
+										   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
 										   contentType: "application/json",
 										   //data: {ID: "Lazio"}, LIMIT 10
 										   timeout: 7000,
@@ -8269,7 +8359,7 @@ function casa(){
 function start() {
 	//chiamo e setto a 1 lo stato dell'autista (ok lavoro)
 	
-	$("#setGPS").hide();
+	$("#btnGPS").hide();
 	$("#Modifica").hide();
 	$("#esci").hide();
 	
@@ -8505,9 +8595,14 @@ function richiesta1() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza1 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza1 +" </font><br>");
 	
-	var Punita = (Number(distanza1).toFixed(2) * 0.12).toFixed(2);
 	
-	var totalone = (Number(costo_servizio1).toFixed(2))-(Number(Punita).toFixed(2))
+	if (Number(distanza1).toFixed(2)>40){
+		var totalone = "4.8";
+	}
+	else{
+		var Punita = (Number(distanza1).toFixed(2) * 0.12).toFixed(2);
+		var totalone = (Number(costo_servizio1).toFixed(2))-(Number(Punita).toFixed(2))
+	}
 	
 	$("#costocalcolato").html("&nbsp;&nbsp;"+Number(totalone).toFixed(2)+"&euro;");
 	
@@ -9598,9 +9693,13 @@ function richiesta2() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza2 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza2 +" </font><br>");
 	
-	var Punita = (Number(distanza2).toFixed(2) * 0.12).toFixed(2);
-	
-	var totalone = (Number(costo_servizio2).toFixed(2))-(Number(Punita).toFixed(2))
+	if (Number(distanza2).toFixed(2)>40){
+		var totalone = "4.8";
+	}
+	else{
+		var Punita = (Number(distanza2).toFixed(2) * 0.12).toFixed(2);
+		var totalone = (Number(costo_servizio2).toFixed(2))-(Number(Punita).toFixed(2))
+	}
 	
 	$("#costocalcolato").html("&nbsp;&nbsp;"+Number(totalone).toFixed(2)+"&euro;");
 	
@@ -10609,9 +10708,13 @@ function richiesta3() {
 	$("#distanza").html("&nbsp;&nbsp;<b><font color='#fff' size='2'>Distanza:&nbsp; </b>"+ distanza3 +" Km</font><br>");
 	$("#codicesicurezza").html("<b><font color='#fff' >Codice di sicurezza:</b><br>"+ cod_sicurezza3 +" </font><br>");
 	
-	var Punita = (Number(distanza3).toFixed(2) * 0.12).toFixed(2);
-	
-	var totalone = (Number(costo_servizio3).toFixed(2))-(Number(Punita).toFixed(2))
+	if (Number(distanza3).toFixed(2)>40){
+		var totalone = "4.8";
+	}
+	else{
+		var Punita = (Number(distanza3).toFixed(2) * 0.12).toFixed(2);
+		var totalone = (Number(costo_servizio3).toFixed(2))-(Number(Punita).toFixed(2))
+	}
 	
 	$("#costocalcolato").html("&nbsp;&nbsp;"+Number(totalone).toFixed(2)+"&euro;");
 	
@@ -13663,6 +13766,47 @@ function chiudi22(id) {
 	
 		$("#blob").hide();
 }
+
+			function mostracal(){
+							  
+							  var options = {
+							  
+							  date: new Date(),
+							  
+							  mode: 'date',
+							  
+							  doneButtonLabel: 'OK',
+							  doneButtonColor: '#000000',
+							  cancelButtonLabel: 'RESET',
+							  cancelButtonColor: '#000000'
+							  
+							  };
+							  
+							  
+								datePicker.show(options, function(date){
+											  var datta = String(date).substring(4, 15);
+											  
+											  var datta1 = datta.replace("Sep","Settembre")
+											  var datta2 = datta1.replace("Oct","Ottobre")
+											  var datta3 = datta2.replace("Nov","Novembre")
+											  var datta4 = datta3.replace("Dec","Dicembre")
+											  var datta5 = datta4.replace("Jan","Gennaio")
+											  var datta6 = datta5.replace("Feb","Febbraio")
+											  var datta7 = datta6.replace("Mar","Marzo")
+											  var datta8 = datta7.replace("Apr","Aprile")
+											  var datta9 = datta8.replace("May","Maggio")
+											  var datta10 = datta9.replace("Jun","Giugno")
+											  var datta11 = datta10.replace("Jul","Luglio")
+											  var datta12 = datta11.replace("Aug","Agosto")
+											  
+											  //document.getElementById("datacal").value = datta12
+											  
+											  document.getElementById("datastart").value = datta
+											  
+											  $("#datastart").blur();
+											  
+									});
+				}
 
 							  
 function prendibanner() {
