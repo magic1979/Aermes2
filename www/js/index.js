@@ -5057,7 +5057,7 @@ function resetta1(focus) {
 	
 	$.ajax({
 		   type:"GET",
-		   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
+		   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"&partenza="+ partenza +"&arrivo="+ arrivo +"&datastart="+ datastart +"",
 		   contentType: "application/json",
 		   //data: {ID: "Lazio"},
 		   timeout: 7000,
@@ -5831,7 +5831,7 @@ function timer(){
 									
 									$.ajax({
 										   type:"GET",
-										   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"",
+										   url:"http://msop.it/aermes/check_richiesta_autistaV5.php?email="+ localStorage.getItem("email") +"&latitudine="+ localStorage.getItem("lat") +"&longitudine="+ localStorage.getItem("lng") +"&id_autista="+ localStorage.getItem("id_autista") +"&fuso="+ localStorage.getItem("citta") +"&ora_cell="+ localStorage.getItem("ora_cell") +"&partenza="+ partenza +"&arrivo="+ arrivo +"&datastart="+ datastart +"",
 										   contentType: "application/json",
 										   //data: {ID: "Lazio"}, LIMIT 10
 										   timeout: 7000,
