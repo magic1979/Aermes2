@@ -160,6 +160,7 @@ receivedEvent: function(id) {
 	
 	alert("1")
 	
+	
 	/*var push = PushNotification.init({
 		"android": {"senderID": "349503210724"},
          "ios": {"alert": "true", "badge": "true", "sound": "true"}
@@ -167,7 +168,7 @@ receivedEvent: function(id) {
 	
 	try {
 	
-		window.push = PushNotification.init({
+		PushNotification.init({
 			"android": {
 				"senderID": "349503210724",
 			},
