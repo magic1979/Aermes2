@@ -168,6 +168,15 @@ receivedEvent: function(id) {
 	try {
 	
 		window.plugins.PushbotsPlugin.initialize("5820b7164a9efa81998b4567", {"android":{"sender_id":"349503210724"}});
+		
+		window.plugins.PushbotsPlugin.on("user:ids", function (data) {
+			console.log("user:ids" + JSON.stringify(data));
+			
+			// userToken = data.token; 
+			  testa (data.token)
+			// userId = data.userId
+        });
+		
 	
 	} catch(err) {
        alert(err);
