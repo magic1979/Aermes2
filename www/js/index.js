@@ -160,7 +160,6 @@ receivedEvent: function(id) {
 	
 	alert("1")
 	
-	
 	/*var push = PushNotification.init({
 		"android": {"senderID": "349503210724"},
          "ios": {"alert": "true", "badge": "true", "sound": "true"}
@@ -168,44 +167,7 @@ receivedEvent: function(id) {
 	
 	try {
 	
-		PushNotification.init({
-			"android": {
-				"senderID": "349503210724",
-			},
-			"ios": {
-				"alert": true,
-				"badge": true,
-				"sound": true
-			}
-		});
-		
-		alert("2")
-
-		push.on('registration', function(data) {
-			
-			 alert("onregistration");
-			
-			//testa(data.registrationId);
-			
-			// data.registrationId
-		});
-		
-		alert("3")
-
-		push.on('notification', function(data) {
-			// data.message,
-			// data.title,
-			// data.count,
-			// data.sound,
-			// data.image,
-			// data.additionalData
-		});
-
-		push.on('error', function(e) {
-			// e.message
-		});
-		
-		alert("4")
+		window.plugins.PushbotsPlugin.initialize("5820b7164a9efa81998b4567", {"android":{"sender_id":"349503210724"}});
 	
 	} catch(err) {
        alert(err);

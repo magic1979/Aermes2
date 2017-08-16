@@ -88,9 +88,7 @@
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
 		<!--<plugin name="cordova-plugin-pushplugin" source="npm" />-->
-		<plugin name="phonegap-plugin-push" source="npm" >
-          <param name="SENDER_ID" value="349503210724" />
-        </plugin>
+		<gap:plugin name="pushbots-cordova-plugin" spec="^1.4.0" source="npm" />
 		
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
