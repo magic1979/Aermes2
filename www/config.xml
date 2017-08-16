@@ -88,7 +88,7 @@
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
 		<!--<plugin name="cordova-plugin-pushplugin" source="npm" />-->
-		<plugin name="phonegap-plugin-push" source="npm" spec="1.9.0">
+		<plugin name="phonegap-plugin-push" source="npm" >
           <param name="SENDER_ID" value="349503210724" />
         </plugin>
 		
