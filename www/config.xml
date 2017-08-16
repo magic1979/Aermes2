@@ -88,6 +88,7 @@
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
 		<plugin name="cordova-plugin-pushplugin" source="npm" />
+		<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
 		<plugin name="cordova-plugin-email-composer" source="npm" />
@@ -164,6 +165,9 @@
     		<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 			<uses-permission android:name="android.permission.CAMERA" />
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 			<uses-feature android:name="android.hardware.camera" />  
