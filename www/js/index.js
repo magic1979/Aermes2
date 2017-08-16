@@ -78,7 +78,7 @@ receivedEvent: function(id) {
 	//// PUSH //////
 	
 	
-	/*var pushNotification;
+	var pushNotification;
 	var token
 
 	
@@ -153,19 +153,14 @@ receivedEvent: function(id) {
 						alert('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
                     break;
                 }
-            }*/
+            }
 	
 	
 	///////// PUSH NUOVE ///////
 	
-	alert("1")
+
 	
-	/*var push = PushNotification.init({
-		"android": {"senderID": "349503210724"},
-         "ios": {"alert": "true", "badge": "true", "sound": "true"}
-	});*/
-	
-	try {
+	/*try {
 	
 		window.plugins.PushbotsPlugin.initialize("5820b7164a9efa81998b4567", {"android":{"sender_id":"349503210724"}});
 		
@@ -180,7 +175,7 @@ receivedEvent: function(id) {
 	
 	} catch(err) {
        alert(err);
-    }
+    }*/
 	
 	
 	function testa (testo) {
