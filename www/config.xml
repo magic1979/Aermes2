@@ -10,6 +10,7 @@
 			Associazione Game Answer
 		</author>
 		<preference name="phonegap-version" value="cli-7.0.1" />
+		<preference name='pgb-builder-version' value='2' />
 		<preference name="orientation" value="portrait" />
 		<preference name="android-windowSoftInputMode" value="adjustResize" />
 		<preference name="fullscreen" value="false" />
@@ -88,7 +89,7 @@
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
 		<!--<plugin name="cordova-plugin-pushplugin" source="npm" />-->
-		<plugin name="phonegap-plugin-push" spec="~1.9.0" source="npm" />
+		<plugin name="phonegap-plugin-push" source="npm" />
 
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
