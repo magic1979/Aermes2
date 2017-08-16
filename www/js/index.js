@@ -160,36 +160,55 @@ receivedEvent: function(id) {
 	
 	alert("1")
 	
-	var push = PushNotification.init({
+	/*var push = PushNotification.init({
 		"android": {"senderID": "349503210724"},
          "ios": {"alert": "true", "badge": "true", "sound": "true"}
-	});
+	});*/
 	
-	alert("2")
-
-    push.on('registration', function(data) {
+	try {
+	
+		window.push = PushNotification.init({
+			"android": {
+				"senderID": "349503210724",
+			},
+			"ios": {
+				"alert": true,
+				"badge": true,
+				"sound": true
+			}
+		});
 		
-		//testa(data.registrationId);
+		alert("2")
+
+		push.on('registration', function(data) {
+			
+			 alert("onregistration");
+			
+			//testa(data.registrationId);
+			
+			// data.registrationId
+		});
 		
-        // data.registrationId
-    });
-	
-	alert("3")
+		alert("3")
 
-    push.on('notification', function(data) {
-        // data.message,
-        // data.title,
-        // data.count,
-        // data.sound,
-        // data.image,
-        // data.additionalData
-    });
+		push.on('notification', function(data) {
+			// data.message,
+			// data.title,
+			// data.count,
+			// data.sound,
+			// data.image,
+			// data.additionalData
+		});
 
-    push.on('error', function(e) {
-        // e.message
-    });
+		push.on('error', function(e) {
+			// e.message
+		});
+		
+		alert("4")
 	
-	alert("4")
+	} catch(err) {
+       alert(err);
+    }
 	
 	
 	function testa (testo) {
