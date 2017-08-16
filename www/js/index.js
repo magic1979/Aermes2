@@ -158,15 +158,23 @@ receivedEvent: function(id) {
 	
 	///////// PUSH NUOVE ///////
 	
-	var push = PushNotification.init({ "android": {"senderID": "349503210724"},
-         "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+	alert("1")
+	
+	var push = PushNotification.init({
+		"android": {"senderID": "349503210724"},
+         "ios": {"alert": "true", "badge": "true", "sound": "true"}
+	});
+	
+	alert("2")
 
     push.on('registration', function(data) {
 		
-		testa(data.registrationId);
+		//testa(data.registrationId);
 		
         // data.registrationId
     });
+	
+	alert("3")
 
     push.on('notification', function(data) {
         // data.message,
@@ -180,6 +188,8 @@ receivedEvent: function(id) {
     push.on('error', function(e) {
         // e.message
     });
+	
+	alert("4")
 	
 	
 	function testa (testo) {
