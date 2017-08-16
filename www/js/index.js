@@ -78,7 +78,7 @@ receivedEvent: function(id) {
 	//// PUSH //////
 	
 	
-	var pushNotification;
+	/*var pushNotification;
 	var token
 
 	
@@ -153,12 +153,12 @@ receivedEvent: function(id) {
 						alert('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
                     break;
                 }
-            }
+            }*/
 	
 	
 	///////// PUSH NUOVE ///////
 	
-	/*var push = PushNotification.init({ "android": {"senderID": "349503210724"},
+	var push = PushNotification.init({ "android": {"senderID": "349503210724"},
          "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
     push.on('registration', function(data) {
@@ -179,7 +179,7 @@ receivedEvent: function(id) {
 
     push.on('error', function(e) {
         // e.message
-    });*/
+    });
 	
 	
 	function testa (testo) {

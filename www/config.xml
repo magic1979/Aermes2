@@ -31,8 +31,8 @@
 		<preference name="KeyboardDisplayRequiresUserAction" value="true" />
 		<preference name="HideKeyboardFormAccessoryBar" value="true" />
 		<preference name="SuppressesIncrementalRendering" value="true" />
-		<preference name="android-minSdkVersion" value="15" />
-		<preference name="android-targetSdkVersion" value="15" />
+		<preference name="android-minSdkVersion" value="14" />
+		<preference name="android-targetSdkVersion" value="14" />
 		<preference name="android-installLocation" value="auto" />
 		<preference name="SplashScreen" value="splash" />
 		<preference name="SplashScreenDelay" value="10000" />
@@ -88,9 +88,11 @@
 		
 		
 		<plugin name="cordova-plugin-cache" source="npm" />
-		<plugin name="cordova-plugin-pushplugin" source="npm" />
-		<!--<plugin name="phonegap-plugin-push" version="1.9.0" source="npm" />-->
-
+		<!--<plugin name="cordova-plugin-pushplugin" source="npm" />-->
+		<plugin name="phonegap-plugin-push" version="1.9.0" source="npm" >
+			<param name="SENDER_ID" value="349503210724" />
+		</plugin>
+		
 		<plugin name="cordova-plugin-datepicker" source="npm" />
 		<plugin name="cordova-plugin-insomnia" source="npm" />
 		<plugin name="cordova-plugin-email-composer" source="npm" />
